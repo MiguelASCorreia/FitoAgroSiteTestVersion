@@ -33,7 +33,7 @@
     <br>
     <button type="button" class="btn white-button" style=" width: 100%; display: none;" id="authorize_button">Entrar</button>
     <br>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeniaWYMX_j4KSXvGp1VMos4TbULdZLPJDUzu-tHubD9D6ANQ/viewform?usp=sf_link">Pedir acesso</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeniaWYMX_j4KSXvGp1VMos4TbULdZLPJDUzu-tHubD9D6ANQ/viewform?usp=sf_link" target="_blank">Pedir acesso</a>
   </div>
 </div>
 
@@ -234,8 +234,12 @@
 
 
       },function(error){
-        console.error(error)
-        listUsers();
+        console.error(error);
+        handleSignoutClick();
+        if(confirm("Não tem acesso ao sistema. Pretende submeter um pedido de acesso?")){
+          window.open('https://docs.google.com/forms/d/e/1FAIpQLSeniaWYMX_j4KSXvGp1VMos4TbULdZLPJDUzu-tHubD9D6ANQ/viewform?usp=sf_link', '_blank');
+        }
+        //listUsers();
       });
 
 
