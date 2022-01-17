@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estatísticas</title>
+    <script type='text/javascript' src='https://eu-west-1a.online.tableau.com/javascripts/api/viz_v1.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="resources/images/fitoagro_logo.png" style="height: 40px; padding-bottom: 4px; align-self: center; margin-right: 64px">
+        <div id="visits_tab" onclick="window.location.href = 'index.html'" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; color: white">Visitas</div>
+        <!--<div id="analytic_tab" onclick="window.location.href = 'analytic_viz.html'" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; color: white">Analítica das Observações</div>-->
+        <div id="stats_tab" onclick="window.location.reload()" style="cursor:pointer; padding:6px; font-size: 16px; text-decoration: underline; color: white">Estatísticas</div>
+        <div style="margin-left: auto; align-self: center">
+            <!--Add buttons to initiate auth sequence and sign out-->
+            <div id="user_name" style="font-size: 16px; padding-top: 6px; color: #cccccc"> </div>
+            <button type="button" class="btn light-button" style="background-color: lightgray; color: black; float: right" id="signout_button">Logout</button>
+        </div>
+    </div>
+        <div class='tableauPlaceholder' style='width: 1450px; height: 960px; overflow-y: scroll; margin: 32px; padding-top: 60px'>
+            <object class='tableauViz' width='98%' height='960' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Feu-west-1a.online.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='&#47;t&#47;teachingandresearchinginteractivedatavisualizationdifct' />
+                <param name='name' value='AnalticadasObservaes&#47;Estatsticas' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='no' />
+                <param name='showAppBanner' value='false' />
+            </object>
+        </div>
+
+    <script type="text/javascript">
+
+        var CLIENT_ID = '697021054229-c7jjbfpfmjkrnoqjo2pg7nfj7v1a1f95.apps.googleusercontent.com';
+        var API_KEY = 'AIzaSyCMSb0abab-1ALwctezS4mWo8AalLXI9KI';
+
+        var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+        var SCOPES = 'https://www.googleapis.com/auth/drive';
+
+        var userName = '';
+        var user = document.getElementById('user_name');
+
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+        }
+
+
+        function initClient() {
+            gapi.client.init({
+                apiKey: API_KEY,
+                clientId: CLIENT_ID,
+                discoveryDocs: DISCOVERY_DOCS,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            }, function(error) {
+                appendPre(JSON.stringify(error, null, 2));
+            });
+        }
+
+        function updateSigninStatus(isSignedIn) {
+            auth2 = gapi.auth2.getAuthInstance();
+            if (isSignedIn) {
+                var profile = auth2.currentUser.get().getBasicProfile();
+                userName = profile.getName();
+                user.innerHTML = userName;
+                user.style.display = 'inline-block';
+            }else
+                window.location.href = "index.html";
+        }
+
+        /**
+         *  Sign out the user upon button click.
+         */
+        function handleSignoutClick() {
+            gapi.auth2.getAuthInstance().signOut();
+            window.location.href = 'index.html';
+        }
+    </script>
+
+
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+</body>
+</html>
+
+
+

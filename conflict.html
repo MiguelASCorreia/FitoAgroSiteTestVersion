@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resolução de conflitos</title>
+    <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/16512b04b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="header">
+    <img src="resources/images/fitoagro_logo.png" style="height: 40px; padding-bottom: 4px; align-self: center; margin-right: 64px">
+    <div id="visits_tab" onclick="changePage('index.html')" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; text-decoration: underline; color: white">Visitas</div>
+    <div id="stats_tab" onclick="changePage('stats.html')" style="cursor:pointer; padding:6px; font-size: 16px; color: white">Estatísticas</div>
+    <div style="margin-left: auto; align-self: center">
+        <!--Add buttons to initiate auth sequence and sign out-->
+        <div id="user_name" style="font-size: 16px; padding-top: 6px; color: #cccccc"> </div>
+    </div>
+</div>
+
+<div style="position: relative; top: 60px; left: 2%; right: 2%; width: 60%">
+    <table border="1" id="table" style="width: 100%;"></table>
+    <button id="confirm" onclick="showLogs()" style="margin-top: 10px; float: right; display: none">Confirmar</button>
+</div>
+
+
+<div id="confirm_modal" class="modal">
+
+    <div id="modal_content" class="modal-content-notes">
+
+		<span style="border-bottom: 1px solid #ecedee; display: flex; flex-direction: row">
+			<a id="modal_title" style="position: relative; justify-content:center; width: 95%; color: #00574B; font-size:24px; font-weight: bold; text-align: center ">Confirmação</a>
+			<a id="modal_close" onclick="onNoteModalClose()" style="cursor:pointer; color: dimgrey; font-size:40px;
+			margin-top: -16px; text-align: center; margin-left: auto; ">x</a>
+		</span>
+
+        <table border="1" id="confirmationTable" style="width: 90%; margin: 5%"></table>
+
+        <button name="conclude" onclick="complete()" style="margin-left: 80%">Concluir</button>
+
+
+    </div>
+
+
+</div>
+<script src="conflictsManager.js">
+</script>
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+</body>
+
+
+</html>

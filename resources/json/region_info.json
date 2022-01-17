@@ -1,0 +1,191 @@
+[
+   {
+      "entidade":"FRUTUS",
+      "fruto":"Pera",
+      "idparcela":13,
+      "codigo":"ISC",
+      "parcela":"Iscarção III",
+      "zona":"Figueiros",
+      "coordenadas":"39.2698547067388, -9.03593299896301",
+      "inimigo":[
+         "Filoxera"
+      ]
+   },
+   {
+      "entidade":"FRUTUS",
+      "fruto":"Pera",
+      "idparcela":10,
+      "codigo":"QB",
+      "parcela":"Quinta do Brejo",
+      "zona":"Sobrena",
+      "coordenadas":"39.2537906369692, -9.06297597111463",
+      "inimigo":[
+         "Cecidómia",
+         "Cochonilha Algodão"
+      ]
+   },
+   {
+      "entidade":"FRUTOESTE",
+      "fruto":"Pera",
+      "idparcela":7,
+      "codigo":"SL",
+      "parcela":"São Lourenço",
+      "zona":"Ericeira",
+      "coordenadas":"39.0142413320646, -9.41185812773265",
+      "inimigo":[
+         "Cecidómia"
+      ]
+   },
+   {
+      "entidade":"COOPVAL",
+      "fruto":"Maça",
+      "idparcela":24,
+      "codigo":"FOR",
+      "parcela":"Formigão",
+      "zona":"Vermelha",
+      "coordenadas":"39.2586604385337, -9.09540016071642",
+      "inimigo":null
+   },
+   {
+      "entidade":"FRUTUS",
+      "fruto":"Marmelos",
+      "idparcela":14,
+      "codigo":"MAR",
+      "parcela":"Marmelos",
+      "zona":"Bombarral",
+      "coordenadas":null,
+      "inimigo":[
+         "Novo Lepidóptero"
+      ]
+   },
+   {
+      "entidade":"COOPVAL",
+      "fruto":"Pera",
+      "idparcela":9,
+      "codigo":"BL",
+      "parcela":"Boiça do Louro",
+      "zona":"Boiça do Louro",
+      "coordenadas":"39.2960950507855, -9.03203525941602",
+      "inimigo":[
+         "Cecidómia"
+      ]
+   },
+   {
+      "entidade":"COOPVAL",
+      "fruto":"Pera",
+      "idparcela":23,
+      "codigo":"VM",
+      "parcela":"Vale Maceira 1",
+      "zona":"Peral",
+      "coordenadas":"39.258867743791, -9.08423906928355",
+      "inimigo":null
+   },
+   {
+      "entidade":"CPF",
+      "fruto":"Pera",
+      "idparcela":8,
+      "codigo":"BB",
+      "parcela":"Barreiras da Bica",
+      "zona":"A-dosFrancos",
+      "coordenadas":"39.3165448155852, -9.03384741192528",
+      "inimigo":[
+         "Cecidómia"
+      ]
+   },
+   {
+      "entidade":"GRANFER",
+      "fruto":"Maça",
+      "idparcela":1,
+      "codigo":"VF",
+      "parcela":"Vale da Fonte",
+      "zona":"Reguengo Grande",
+      "coordenadas":"39.2727501447106, -9.20812966504",
+      "inimigo":[
+         "Cochonilha Algodão"
+      ]
+   },
+   {
+      "entidade":"COOPVAL",
+      "fruto":"Maça",
+      "idparcela":16,
+      "codigo":"JB",
+      "parcela":"João Boi",
+      "zona":"Boiça do Louro",
+      "coordenadas":"39.2894204893862, -9.0416348066517",
+      "inimigo":[
+         "Cochonilha Algodão"
+      ]
+   },
+   {
+      "entidade":"FRUTOESTE",
+      "fruto":"Pera",
+      "idparcela":12,
+      "codigo":"ENC",
+      "parcela":"Encarnação",
+      "zona":"Encarnação",
+      "coordenadas":"39.0205940866196, -9.37605022261976",
+      "inimigo":[
+         "Filoxera"
+      ]
+   },
+   {
+      "entidade":"ECOFRUTAS",
+      "fruto":"Pera",
+      "idparcela":4,
+      "codigo":"BRC",
+      "parcela":"Barrocalvo",
+      "zona":"Bombarral",
+      "coordenadas":"39.292169153968, -9.10226632806575",
+      "inimigo":[
+         "Filoxera"
+      ]
+   },
+   {
+      "entidade":"FRUBAÇA",
+      "fruto":"Maça",
+      "idparcela":5,
+      "codigo":"TER",
+      "parcela":"Termas",
+      "zona":"Alcobaça",
+      "coordenadas":"39.5722235529031, -9.00530931153742",
+      "inimigo":[
+         "Novo Lepidóptero"
+      ]
+   },
+   {
+      "entidade":"CAB",
+      "fruto":"Pera",
+      "idparcela":18,
+      "codigo":"CS",
+      "parcela":"Casal Serrano",
+      "zona":"Casal Serrano",
+      "coordenadas":"39.2775348021613, -9.2132867819605",
+      "inimigo":[
+         "Cecidómia"
+      ]
+   },
+   {
+      "entidade":"CPF",
+      "fruto":"Pera",
+      "idparcela":3,
+      "codigo":"VL",
+      "parcela":"Vale Leite",
+      "zona":"Reguengo Grande",
+      "coordenadas":"39.2704303366082, -9.16908414078817",
+      "inimigo":[
+         "Cochonilha Algodão"
+      ]
+   },
+   {
+      "entidade":"GRANFER",
+      "fruto":"Maça",
+      "idparcela":6,
+      "codigo":"QR",
+      "parcela":"Quinta do Rato",
+      "zona":"Vale Maceira",
+      "coordenadas":"39.4759553212144, -9.12011354680032",
+      "inimigo":[
+         "Novo Lepidóptero"
+      ]
+   }
+]

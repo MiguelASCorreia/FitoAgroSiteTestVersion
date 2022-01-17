@@ -1,0 +1,475 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    height: 45px;
+    padding: 16px;
+    background-color: #00574B;
+    box-shadow: 0 5px 5px darkgrey;
+    margin-bottom: 10px;
+}
+
+.content{
+    padding: 16px;
+    display: none;
+    flex-direction: column;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+h3, h6{
+    color: #008577;
+}
+
+h3{
+    font-size: 26px;
+}
+
+.box{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px darkgrey;
+    cursor: pointer;
+}
+
+.box-content, .box-label{
+    /*display: flex;
+    position: absolute;
+    flex-direction: column;*/
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 8px;
+    font-size: 16px !important;
+}
+
+.box-content {
+    width: 210px;
+    height: 180px;
+    object-position: right;
+    background-color: #d3d3d3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.box-label{
+    justify-content: center;
+    align-items: center;
+    object-position: left;
+    width: 100px;
+    height: 180px;
+    background-color: #00574b;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.box:hover{
+    opacity: 0.8;
+}
+
+.light-button{
+    background-color: #cccccc;
+    color: black;
+    padding-top: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 30px;
+    align-content: center;
+    text-align: center !important;
+    font-weight: bolder;
+}
+
+.light-button:hover {
+    opacity: 0.7;
+}
+
+#map { position:relative; height: 100%; min-height: 350px; top:-40px; width:100%; }
+
+#info { height: calc(90% - 100px); top:0px; left:0; overflow: hidden; width:100%; visibility: hidden; }
+
+.column {
+    float: left;
+    width: 50%;
+    height: fit-content;
+}
+
+.image_thumbnail {height: 125px; width:125px; margin:15px;}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.example-table {  border: 2px solid #cccccc; border-spacing: 30px;   border-collapse: separate; }
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+.tabcontent {
+    display: none;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+#menu {
+    position: relative;
+    z-index: 3;
+    align-self: flex-end;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+    background-color: lightgrey;
+    opacity: 0.8;
+    color: #454545;
+    border-radius: 0 0 0 5px;
+    width: fit-content;
+    font-family: 'Open Sans', sans-serif;
+}
+.color-box {
+    width: 30px;
+    height: 2px;
+    color:black;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+    background-color: #ccc;
+    position: relative;
+
+}
+
+.gallery {
+    display: none;
+    padding: 0 24px 0 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+
+}
+
+.marker_image {
+    background-image: url('resources/images/blue_marker_photo.png');
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.marker_voice {
+    background-image: url('resources/images/blue_marker_mic.png');
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.marker_note {
+    background-image: url('resources/images/blue_marker_note.png');
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+#user_name {
+    display: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    margin-right: 20px;
+    text-align: center !important;
+    font-size: 24px;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu{
+    padding: 0;
+}
+
+.dropdown-menu li:hover{
+    background-color: #f5f5f5;
+}
+
+*:focus{
+    outline: 0;
+}
+
+.dropdown-submenu{
+    padding: 12px 16px 8px 8px;
+    cursor: pointer;
+}
+
+.dropdown-menu>.dropdown-submenu:hover{
+    background-color: whitesmoke;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -9px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.tool{
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tool .tooltiptext {
+    visibility: hidden;
+    width: 170px;
+    background-color: #404040;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -85px;
+
+    /* Fade in tooltip */
+    opacity: 100;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip text */
+.tool .tooltip-large {
+    visibility: hidden;
+    width: 250px;
+    background-color: #404040;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -125px;
+
+    /* Fade in tooltip */
+    opacity: 100;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow
+.tool .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 80%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #404040 transparent;
+} */
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tool:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tool:hover .tooltip-large {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 6% auto; /* 6% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: auto;
+}
+
+.modal-content-notes {
+    background-color: #fefefe;
+    margin: 6% auto; /* 6% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */
+    height: auto;
+}
+
+.comments {
+    padding: 15px;
+    height: 200px;
+    overflow: auto;
+}
+
+.comment_button {
+    font-size:18px;
+    width: 20%;
+    height: 40px;
+}
+
+.comment_button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#filterdates::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+#filterdates:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+}
+
+#filterdates::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}
+
+.daterangepicker{
+    z-index: 9998;
+}
+
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    width: 300px;
+    height: 300px;
+    float:right;
+}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}

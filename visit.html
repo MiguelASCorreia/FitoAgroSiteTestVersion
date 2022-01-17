@@ -1,0 +1,2926 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Informação da visita</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<!--<script type='text/javascript' src='https://eu-west-1a.online.tableau.com/javascripts/api/viz_v1.js'></script>-->
+	<script src="https://eu-west-1a.online.tableau.com/javascripts/api/tableau-2.8.1.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/16512b04b3.js" crossorigin="anonymous"></script>
+
+	<script src='https://api.mapbox.com/mapbox.js/v3.3.0/mapbox.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/v3.3.0/mapbox.css' rel='stylesheet' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript">
+
+		var workbook, sheet;
+
+		function initViz() {
+
+			var v = JSON.parse(sessionStorage.getItem("visit"));
+			var date = v.date.split("/");
+			var plot = v.plotName;
+
+			var containerDiv = document.getElementById("viz"),
+					url = "https://eu-west-1a.online.tableau.com/t/teachingandresearchinginteractivedatavisualizationdifct/views/RegistosdasVisitas/DetalhesVisitaWebsite",
+					options = {
+						hideTabs: true,
+						hideToolbar: true,
+						"nomeparcela": plot,
+						onFirstInteractive: function () {
+							workbook = viz.getWorkbook();
+							sheet = workbook.getActiveSheet();
+							document.getElementById('viz').style.display = "none";
+							filterParam();
+						}
+					};
+
+			var viz = new tableau.Viz(containerDiv, url, options);
+
+			function filterParam() {
+				workbook.changeParameterValueAsync("SelectDate", new Date(Date.UTC(Number(date[0]), Number(date[1]) - 1, Number(date[2]))))
+						.then(result => console.log("SelectDate=" + result.getCurrentValue().formattedValue))
+						.then(//IMPORTANT: Hide interactive tours button
+								function (){
+									setTimeout(() => {  openTab('viz_tab','viz'); }, 350);
+								}
+						)
+						.otherwise(msg => console.log(msg));
+
+			}
+
+		}
+
+	</script>
+
+</head>
+
+<body onload="initViz();">
+
+<div id="myModal" class="modal">
+
+    <div id="modal_content" class="modal-content">
+
+		<p id="modal_close" onclick="onModalClose()" style="cursor:pointer; color: dimgrey; font-size:40px; border-bottom: 1px solid #ecedee;
+		margin-top: -16px; text-align: center; margin-bottom: 12px; padding-left: 95%; ">x</p>
+
+		<div style="width: 100%; display: flex; flex-direction: row">
+			<div style="width: 35%; float: left; height: 450px; display : flex;align-items : center;justify-content: center;background: #ecedee" >
+				<img id="modal_photo" style="position: relative; display: none; "/>
+				<audio id="modal_audio" controls="controls" typeof="audio/mp3" style="position: relative; display: none;"></audio>
+			</div>
+
+			<div style="margin-left: 3%; width: 60%">
+				<div>
+					<svg  id="modal_edit"  onclick="tryEdit()" style="cursor:pointer; position: relative;float:left;display: none;" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+						<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+					</svg>
+
+					<svg  id="modal_edit_close"  onclick="cancelEdit()" style="cursor:pointer; position:  relative; float:left; display: none; " width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+					<a style="float: left">&ensp;</a>
+
+					<svg  id="modal_edit_confirm"  onclick="confirmEdit()" style="cursor:pointer; position: relative; float:left; display: none;" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+					</svg>
+
+					<a style="float: left">&ensp;</a>
+
+					<svg id="modal_locate"  onclick="zoomOnMap()" style="cursor:pointer; position: relative;display: none; float: left"  width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-map" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98l4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+					</svg>
+
+				</div>
+
+				<a id="modal_date" style="position: relative; float: right; color: #00574B; font-size:24px; font-weight: bold; "></a>
+
+
+				<div style="position: relative; margin-top: 50px;;font-size:20px; text-align: justify;text-justify: inter-word;">
+
+					<p id="modal_description" style="max-height:75px; overflow: auto; color: black;word-wrap: break-word;  "></p>
+
+					<input id="modal_description_edit"  style="max-height:75px; overflow: auto; margin-bottom:6px;width: 100%; color: black; display:none;"/>
+
+					<div>
+						<a id="modal_number_comments" style="font-size: 16px; font-weight: bold; float: right">0</a>
+						<a style="float: right">&ensp;</a>
+						<svg width="1em"  style="position: relative; float: right" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+							<path fill-rule="evenodd" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+						</svg>
+
+					</div>
+					<hr style="margin-top: 40px" />
+
+					<div class="comments" id="file_comments">
+						<a id="file_no_comments" style="display: block; color: gray; text-align: center;">&ensp;Sem comentários.</a>
+
+					</div>
+					<hr/>
+
+					<div style="float: left; position:relative; width: 100%">
+						<input id="file_comment_input"  style="color: black; font-size:24px; width: 75%;"/>
+
+						<button onclick="addNewCommentToFile()" class= 'comment_button' type="button">Comentar</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+    </div>
+
+</div>
+
+
+<div id="note_modal" class="modal">
+
+	<div id="note_modal_content" class="modal-content-notes">
+
+		<span style="border-bottom: 1px solid #ecedee; display: flex; flex-direction: row">
+			<a id="modal_title" style="position: relative; justify-content:center; width: 95%; color: #00574B; font-size:24px; font-weight: bold; text-align: center ">Notas da visita</a>
+			<a id="note_modal_close" onclick="onNoteModalClose()" style="cursor:pointer; color: dimgrey; font-size:40px;
+			margin-top: -16px; text-align: center; margin-left: auto; ">x</a>
+		</span>
+
+
+		<div style="position: relative; margin-top: 30px;font-size:20px; text-align: justify;text-justify: inter-word;">
+
+			<a id="note_modal_description" style="color: black; max-height: 75px; overflow-y: scroll"></a>
+			<br>
+			<div style="margin-bottom: 25px">
+				<a id="note_modal_number_comments" style="font-size: 16px; font-weight: bold; float: right">0</a>
+				<a style="float: right">&ensp;</a>
+				<svg width="1em"  style="position: relative; float: right" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+					<path fill-rule="evenodd" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+				</svg>
+
+			</div>
+			<hr />
+
+			<div class="comments" id="note_comments">
+				<a id="note_no_comments" style="color: gray; text-align: center;">&ensp;Sem comentários.</a>
+
+			</div>
+			<hr />
+
+			<div style="float: left; width:100%; position:relative;">
+				<input id="note_comment_input"  style="color: black; font-size:24px; width: 75%"/>
+
+				<button onclick="addNewCommentToNote()" class= 'comment_button' type="button">Comentar</button>
+
+
+			</div>
+			<p>&nbsp;</p>
+
+		</div>
+	</div>
+
+</div>
+
+<div id="specific_note_modal" class="modal">
+
+	<div id="specific_note_modal_content" class="modal-content-notes">
+
+		<span style="border-bottom: 1px solid #ecedee; display: flex; flex-direction: row">
+			<a id="specific_modal_title" style="position: relative; justify-content:center; width: 95%; color: #00574B; font-size:24px; font-weight: bold; text-align: center "></a>
+			<a id="specific_note_modal_close" onclick="specificNoteClose()" style="cursor:pointer; color: dimgrey; font-size:40px;
+			margin-top: -16px; text-align: center; margin-left: auto; ">x</a>
+		</span>
+
+
+		<div style="position: relative; margin-top: 30px;font-size:20px; text-align: justify;text-justify: inter-word;">
+
+			<a id="specific_note_modal_description" style="color: black; max-height: 75px; overflow-y: scroll"></a>
+			<br>
+
+			<hr />
+
+		</div>
+	</div>
+
+</div>
+
+<div class="header">
+	<img src="resources/images/fitoagro_logo.png" style="height: 40px; padding-bottom: 4px; align-self: center; margin-right: 64px">
+	<div id="visits_tab" onclick="window.location.href = 'index.html'" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; color: white">Visitas</div>
+	<div id="stats_tab" onclick="window.location.href = 'stats.html'" style="cursor:pointer; padding:6px; font-size: 16px; color: white">Estatísticas</div>
+	<div style="margin-left: auto; align-self: center">
+		<!--Add buttons to initiate auth sequence and sign out-->
+		<div id="user_name"  style="font-size: 16px; padding-top: 6px; color: #cccccc"> </div>
+		<button onclick="handleSignoutClick()" type="button" class="btn light-button" style="background-color: lightgray; color: black; float: right;" id="signout_button">Logout</button>
+	</div>
+</div>
+
+<div class="content" style="padding-top: 60px; display: flex; margin-left: 2%; margin-right: 2%">
+	<div style="display: flex; flex-direction: row; align-items: center; padding-bottom: 8px; border-bottom: 2px solid #ecedee;
+				margin-left: 32px; margin-right: 32px;">
+		<span  id="last_visit_area" style="margin-right:auto; cursor: default">
+			<i class="fas fa-chevron-left" style="font-size: 20px;"></i>&emsp;
+			<a id="last_visit" style="width: 170px;font-size: 15px;"></a>
+		</span>
+			<h5 id="visit_title" style="text-align: center; color: #008577; font-weight:bold;"></h5>
+			<span id="next_visit_area" style="margin-left: auto; cursor: default">
+			<a id="next_visit" style="font-size: 15px; width: 170px; text-align: right"></a>&emsp;
+			<i class="fas fa-chevron-right" style="font-size: 20px;"></i>
+		</span>
+	</div>
+<div id="info" style="display: flex; flex-direction: row;">
+
+	<div style="width: 100%; height: 100%; display: flex; flex-direction: row; flex-wrap:wrap; justify-content: space-between; justify-items: flex-start; padding: 16px 24px 0 20px;">
+
+			<div style="flex-direction: column; width: 50%; flex-wrap: wrap; padding-right: 18px">
+				<table style="width: 100%">
+
+					<tr>
+						<td>
+							<span id="begin_text" style="font-weight: bold; font-size: 18px; color: black">Início:</span>
+							<span style=" margin-left: 1%">
+								<a id="begin"></a>
+							</span>
+						</td>
+						<td>
+							<span style="width:13%; font-weight: bold; font-size: 18px; color: black">Técnico:</span>
+							<span style="width: 30%; margin-left: 1%">
+								<a id="technician" ></a>
+							</span>
+						</td>
+					</tr>
+					<tr class="blank_row">
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+
+						<td>
+						<span style="width:13%; font-weight: bold; font-size: 18px; color: black">EF:</span>
+						<span style="width:15%; margin-left: 1%">
+							<a id="ef"></a>
+						</span>
+						</td>
+
+						<td>
+							<span style="font-weight: bold; font-size: 18px; color: black;">Calibre:</span>
+							<span style="margin-left: 1%">
+							<a id="caliber">Não registado</a>
+						</span>
+						</td>
+
+						<td>
+						<span id="nea_text" style="font-weight: bold; font-size: 18px; color: black; display: none">NEA:</span>
+						<span style="margin-left: 1%">
+							<a id="nea"></a>
+						</span>
+						</td>
+					</tr>
+					<tr class="blank_row">
+						<td>&nbsp;</td>
+					</tr>
+
+					<tr>
+
+						<td>
+							<span style="width:13%; font-weight: bold; font-size: 18px; color: black">Chuva:</span>
+							<span style="width:15%; margin-left: 1%">
+							<a id="rain">Não</a>
+						</span>
+						</td>
+						<td>
+							<span style="font-weight: bold; font-size: 18px; color: black;">Tratamento:</span>
+							<span style="margin-left: 1%">
+							<a id="treatment">Não</a>
+						</span>
+						</td>
+					</tr>
+
+					<tr class="blank_row">
+						<td>&nbsp;</td>
+					</tr>
+
+
+				</table>
+				<div  id="note_gallery" style="display: flex; flex-direction: row; align-items: baseline">
+					<span style="font-weight: bold; font-size: 18px; color: black"> Notas: </span>
+                    <span style="width: fit-content; margin-left: 1%">
+					    <a id="no_notes"> Sem notas. </a>
+                    </span>
+
+					<div id="note_comments_icon" style="display: none; margin-left: 24px; cursor:pointer; float: right " onclick="checkNoteComments()" >
+
+						<svg width="1.5em"  style="position: relative;" height="1.5em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+							<path fill-rule="evenodd" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+						</svg>
+						<a id="note_number_comments" style="font-size: 16px; margin-left: 2px; padding-top: 3px; font-weight: bold;">0</a>
+
+
+					</div>
+
+				</div>
+				<!--
+				<div id='notes' style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end">
+					<textarea placeholder="Adicionar notas..." id="note" rows="4" cols="50"></textarea>
+					<button class="btn light-button" style="margin-top:6px;width: fit-content; background-color: lightgrey; color: #00574B" id="add_note">Submeter <i class="fas fa-paper-plane"></i></button>
+				</div>
+				-->
+
+
+				<div id='gallery_header' style="display: none; flex-direction: row; align-items: center; border-top: 2px solid #f8f9fa;
+				padding-top: 12px; margin-top: 12px;">
+					<a style="font-size: 18px; color: black; font-weight: bold">Multimédia: </a>
+					<span style="margin-left: auto; color: #008577">
+						<i class="fas fa-camera" style="font-size: 20px; color: #008577"></i>
+						<a id="number_photos" style="font-size: 16px; font-weight: bold"></a>
+
+						<i class="fas fa-microphone" style="margin-left: 20px; font-size: 20px; color: #008577"></i>
+						<a id="number_voice_records" style="font-size: 16px; font-weight: bold"></a>
+					</span>
+				</div>
+
+				<div id='gallery' style="height: fit-content;padding-left: 5%; padding-right: 5%; margin-top: 8px; margin-bottom: 8px;
+				display: none; flex-direction: row; align-items: center">
+
+					<!--<i class="fas fa-chevron-circle-left" style="width: 5%; font-size: 20px"></i>-->
+
+                    <div class="gallery" id="photo_gallery" style="width: 80%">
+                    </div>
+
+					<!--<i class="fas fa-chevron-circle-right" style="width: 5%; font-size: 20px"></i>-->
+				</div>
+
+
+			</div>
+
+
+		<div style="display: flex; flex-direction: column; justify-content: center; min-width:45%; max-width: 100%; height: 100%;">
+			<table style="float: right">
+				<tr>
+					<td id="t1" style="display: none"></td>
+					<td id="t2" style="display: none"></td>
+
+				</tr>
+			</table>
+			<div id="menu" style="margin-top: 16px;">
+				<input id="light-v10" type="radio" name="rtoggle" value="light" />
+				<label for="light">Básico</label>
+				&nbsp;&nbsp;
+				<input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+				<label for="outdoors">Exterior</label>
+				&nbsp;&nbsp;
+				<input id="satellite-v9" type="radio" name="rtoggle" value="satellite"
+					   checked="checked" />
+				<label for="satellite">Satélite</label>
+			</div>
+			<div id="map"></div>
+		</div>
+
+	</div>
+
+</div>
+
+	<div class="tab">
+		<button id="viz_tab" class="tablinks" onclick="openTab('viz_tab','viz')">Visualização</button>
+		<button id="raw_tab" class="tablinks" onclick="openTab('raw_tab','raw')">Dados em bruto</button>
+
+			<div id='viz' class='tableauPlaceholder' style="width: 98%; height: 800px; margin-left: 1%; margin-right: 1%; margin-bottom: 5%" >
+				<!--<object class='tableauViz' width='98%' height='750' style='display:none;'>
+					<param name='host_url' value='https%3A%2F%2Feu-west-1a.online.tableau.com%2F' />
+					<param name='site_root' value='&#47;t&#47;teachingandresearchinginteractivedatavisualizationdifct' />
+					//<param name='name' value='Visitaseobservaes&#47;CapturasObservaesporinimigoxVisita' />
+					<param name='name' value='RegistosdasVisitas&#47;DetalhesVisitaWebsite' />
+					<param name='tabs' value='no' />
+					<param name='toolbar' value='no' />
+					<param name='showAppBanner' value='false' />
+				</object>-->
+			</div>
+
+		<div id="raw">
+			<iframe id="raw_frame" name="Dados raw" width="100%"
+					height="750px"></iframe>
+		</div>
+	</div>
+
+
+</div>
+
+
+<script type='text/javascript'>
+
+	const COMMENTS_FOLDER_ID = '1Fl4pNIhHQG2OWc9oLrGUBT8pddqzoMvW';
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsYXNjb3JyZWlhIiwiYSI6ImNrN25iYzh4NTAxMHIzc210bzJpM3EyZDcifQ.pVWzek_lEMfJixSnBu1ZMA';
+
+	var CLIENT_ID = '697021054229-c7jjbfpfmjkrnoqjo2pg7nfj7v1a1f95.apps.googleusercontent.com';
+	var API_KEY = 'AIzaSyCMSb0abab-1ALwctezS4mWo8AalLXI9KI';
+
+	var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest",'https://sheets.googleapis.com/$discovery/rest?version=v4'];
+	var SCOPES = 'https://www.googleapis.com/auth/drive';
+
+	/**
+	 *  Sign out the user upon button click.
+	 */
+	function handleSignoutClick() {
+		gapi.auth2.getAuthInstance().signOut();
+		window.location.href = 'index.html';
+	}
+
+	var photos_lock = 1;
+	var audio_lock = 1;
+
+	var users = [];
+	var visit = [];
+	var plotVisits = [];
+	var allNotes = [];
+	var myCommentsFolderId = '';
+	var commenting = false;
+
+	var countsPerTraps;
+
+	var folderOwner = '';
+
+	var filesIds;
+
+	var mFocus;
+	var mPoints = {};
+	var mPlot;
+	var noteFolder = '';
+	var imageFolder = '';
+	var audioFolder = '';
+	var userName = '';
+    var userEmail = '';
+
+	var files_map = {};
+    var files_info = {};
+	var points_by_id = {};
+
+	var actual_file_id ='';
+
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/satellite-v9',
+		zoom: 0
+	});
+
+
+	var layerList = document.getElementById('menu');
+	var inputs = layerList.getElementsByTagName('input');
+	var user = document.getElementById('user_name');
+
+	function switchLayer(layer) {
+		var layerId = layer.target.id;
+		map.setStyle('mapbox://styles/mapbox/' + layerId);
+		map.on('style.load', function() {
+			reloadMap();
+
+
+		});
+	}
+
+	for (var i = 0; i < inputs.length; i++) {
+		inputs[i].onclick = switchLayer;
+	}
+
+
+
+	/*var input = document.getElementById('note');
+	var button = document.getElementById('add_note');
+
+	button.onclick = function(){
+		var text = input.value;
+		if(text == null || text == "")
+			alert("Campo obrigatório");
+		else{
+
+			function pad2(n) { return n < 10 ? '0' + n : n }
+
+			var date = new Date();
+
+			var name = date.getFullYear().toString() + pad2(date.getMonth() + 1) + pad2( date.getDate()) + pad2( date.getHours() ) + pad2( date.getMinutes() ) + pad2( date.getSeconds() );
+
+			text = userName + " ("+ pad2( date.getDate()) + "/" + pad2(date.getMonth() + 1) + "/" +  date.getFullYear().toString() + " " + pad2( date.getHours() )+ ":" + pad2( date.getMinutes() ) + '): ' + text;
+
+
+			var file = new Blob([text], {type: 'text/plain'});
+
+			var accessToken = gapi.auth.getToken().access_token;
+
+			var form = new FormData();
+
+
+			if(noteFolder == ''){
+				var folderId = getUrlVars()['visit_id'];
+
+
+				var request = gapi.client.drive.files.create({
+					"name" : "Notes",
+					"mimeType" : "application/vnd.google-apps.folder",
+					"parents" : [folderId],
+				});
+
+				request.execute(function(resp) {
+					noteFolder = resp.id;
+
+					var metadata = {
+						"name" : name,
+						"mimeType" : "text/plain",
+						"parents" : [noteFolder],
+					};
+
+					form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+					form.append('file', file);
+
+					var xhr = new XMLHttpRequest();
+					xhr.open('post', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id');
+					xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+					xhr.responseType = 'json';
+					xhr.onload = () => {
+						var a = document.getElementById("no_notes");
+						a.innerHTML = "";
+						var ul = document.getElementById("notes_ul");
+						var li = document.createElement('li');
+						ul.appendChild(li);
+						li.innerHTML=li.innerHTML + text;
+					};
+					xhr.send(form);
+
+				});
+			}else{
+				var metadata = {
+					"name" : name,
+					"mimeType" : "text/plain",
+					"parents" : [noteFolder],
+				};
+
+				form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+				form.append('file', file);
+
+				var xhr = new XMLHttpRequest();
+				xhr.open('post', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id');
+				xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+				xhr.responseType = 'json';
+				xhr.onload = () => {
+					var a = document.getElementById("no_notes");
+					a.innerHTML = "";
+					var ul = document.getElementById("notes_ul");
+					var li = document.createElement('li');
+					ul.appendChild(li);
+					li.innerHTML=li.innerHTML + text;
+				};
+				xhr.send(form);
+			}
+
+			input.value = '';
+		}
+	}*/
+
+
+
+	function reloadMap(){
+
+		var users = [];
+		try{
+			users = document.getElementById('technician').innerHTML.split(' &amp; ');
+		}catch (e) {
+		}
+
+		if(map.getLayer('plot'))
+			map.removeLayer('plot');
+
+		if(map.getLayer('plot_line'))
+			map.removeLayer('plot_line');
+
+		users.forEach(user => {
+			//console.log("removing " + user)
+			if (map.getLayer('route' + user))
+				map.removeLayer('route'+ user);
+		});
+
+
+		if(!map.getSource('plot'))
+			map.addSource('plot', {
+				'type': 'geojson',
+				'data': {
+					'type': 'Feature',
+					'geometry': {
+						'type': 'Polygon',
+						'coordinates': mPlot
+					}
+				}
+			});
+
+		users.forEach(user => {
+
+			if (!map.getSource('route' + user)) {
+
+				//console.log("addSource " + user);
+
+				map.addSource('route' + user, {
+					'type': 'geojson',
+					'data': {
+						'type': 'Feature',
+						'properties': {},
+						'geometry': {
+							'type': 'LineString',
+							'coordinates': mPoints[user]
+						}
+					}
+				});
+			}
+		} );
+
+		map.addLayer({
+			'id': 'plot',
+			'type': 'fill',
+			'source': 'plot',
+			'layout': {},
+			'paint': {
+				'fill-color': '#55C93D',
+				'fill-opacity': 0.25
+			}
+		});
+
+		map.addLayer({
+			'id': 'plot_line',
+			'type': 'line',
+			'source': 'plot',
+			'paint': {
+				'line-color': 'rgba(20, 100, 25, 1)',
+				'line-width': 5
+			}
+		});
+
+		for(var i = 0; i < users.length; i++){
+			var hexaColor = '#e55e5e';
+			if(i !== 0)
+				hexaColor = '#4d79ff';
+			//console.log("addLayers " + users[i]);
+
+			map.addLayer({
+				'id': 'route' + users[i],
+				'type': 'line',
+				'source': 'route' + users[i],
+				'layout': {
+					'line-join': 'round',
+					'line-cap': 'round'
+				},
+				'paint': {
+					'line-color': hexaColor,
+					'line-width': 6
+				}
+			});
+		}
+
+
+	}
+
+
+
+
+	function readTextFile(file, callback) {
+		var rawFile = new XMLHttpRequest();
+		rawFile.overrideMimeType("application/json");
+		rawFile.open("GET", file, true);
+		rawFile.onreadystatechange = function() {
+			if (rawFile.readyState === 4 && rawFile.status == "200") {
+				callback(rawFile.responseText);
+			}
+		};
+		rawFile.send(null);
+	}
+
+	var loaded = false;
+	function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+
+		// Get all elements with class="tabcontent" and hide them
+
+		document.getElementById('viz').style.display = "none";
+		document.getElementById('raw').style.display = "none";
+
+		// Get all elements with class="tablinks" and remove the class "active"
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(tabName).style.display = "block";
+		document.getElementById(evt).className += " active";
+
+		if(tabName === "raw")
+			if(loaded === false)
+				getJSONsContents();
+
+	}
+
+	function handleClientLoad() {
+		gapi.load('client:auth2', initClient);
+	}
+
+
+	function initClient() {
+		gapi.client.init({
+			apiKey: API_KEY,
+			clientId: CLIENT_ID,
+			discoveryDocs: DISCOVERY_DOCS,
+			scope: SCOPES
+		}).then(function () {
+			// Listen for sign-in state changes.
+			gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+			// Handle the initial sign-in state.
+			updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+		}, function(error) {
+			appendPre(JSON.stringify(error, null, 2));
+		});
+	}
+
+	function updateSigninStatus(isSignedIn) {
+		auth2 = gapi.auth2.getAuthInstance();
+		if (isSignedIn) {
+			var profile = auth2.currentUser.get().getBasicProfile();
+			userName = profile.getName();
+			userEmail = profile.getEmail();
+			user.innerHTML = userName;
+			user.style.display = 'inline-block';
+			listFolder();
+		}else
+			window.location.href = "index.html";
+	}
+
+	//		  function appendPre(message) {
+	//			var pre = document.getElementById('content');
+	//			var textContent = document.createTextNode(message + '\n');
+	//			pre.appendChild(textContent);
+	//		  }
+
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+
+	function loadMap(toFocus,plot){
+
+		var users = [];
+		//console.log(document.getElementById('technician').innerHTML);
+		try{
+			users = document.getElementById('technician').innerHTML.split(' &amp; ');
+		}catch (e) {
+		}
+
+		this.mFocus = toFocus;
+		this.mPlot = plot;
+
+		map.flyTo({ center: toFocus, zoom: 16, speed: 10. });
+
+		var layers = map.getStyle().layers;
+
+		var found = false;
+		var layerIds = layers.map(function (layer) {
+			if(layer.id === 'route' + users[0])
+				found = true;
+		});
+
+
+		map.addSource('plot', {
+			'type': 'geojson',
+			'data': {
+				'type': 'Feature',
+				'geometry': {
+					'type': 'Polygon',
+					'coordinates': plot
+				}
+			}
+		});
+		if(found) {
+			map.addLayer({
+				'id': 'plot_line',
+				'type': 'line',
+				'source': 'plot',
+				'paint': {
+					'line-color': 'rgba(20, 100, 25, 1)',
+					'line-width': 5
+				}
+			},'route' + users[0]);
+
+			map.addLayer({
+				'id': 'plot',
+				'type': 'fill',
+				'source': 'plot',
+				'layout': {},
+				'paint': {
+					'fill-color': '#55C93D',
+					'fill-opacity': 0.25
+				}
+			}, 'route' + users[0]);
+		}else {
+
+			map.addLayer({
+				'id': 'plot_line',
+				'type': 'line',
+				'source': 'plot',
+				'paint': {
+					'line-color': 'rgba(20, 100, 25, 1)',
+					'line-width': 5
+				}
+			});
+
+			map.addLayer({
+				'id': 'plot',
+				'type': 'fill',
+				'source': 'plot',
+				'layout': {},
+				'paint': {
+					'fill-color': '#55C93D',
+					'fill-opacity': 0.25
+				}
+			});
+		}
+
+	}
+
+	function orderFiles(){
+		if(this.photos_lock === 1 || this.audio_lock === 1){
+			setTimeout(orderFiles, 500);
+			return;
+		}
+
+		var $wrapper = $('.gallery');
+		$wrapper.find('.gallery_item').sort(function(a, b) {
+			////console.log(a.dataset.name);
+			////console.log(b.dataset.name);
+
+			return compareNames(a.dataset.name,b.dataset.name)
+		}).appendTo($wrapper);
+	}
+
+
+	function addRoute(points, wayPoints,hexaColor,id){
+		//console.log(id);
+
+		if(this.photos_lock === 1 || this.audio_lock === 1){
+			setTimeout(addRoute, 1000,points,wayPoints,hexaColor,id);
+			return;
+		}
+
+		orderFiles();
+
+		////console.log("Lock released");
+
+		visitContentPromise().then((res) => {
+			let json = JSON.parse(res);
+			console.log(json);
+			if(typeof json['notes'] !== "undefined"){
+				allNotes =  json['notes'];
+				for(let j = 0; j < allNotes.length; j++){
+					let id = allNotes[j].id;
+					files_map[id] = id;
+					files_info[id] = allNotes[j];
+				}
+			}
+
+			if(typeof json['traps'] !== "undefined"){
+				console.log("Entrou");
+				countsPerTraps = json['traps'];
+				console.log(countsPerTraps);
+			}
+
+			console.log(files_info);
+			var points_in_map = [];
+			for(var i = 0 ; i < wayPoints.length; i++) {
+				(function () {
+					var id = files_map[wayPoints[i][0].name];
+					if (id in files_info) {
+						var el = document.createElement('div');
+						var isPhoto = false;
+						var isNote = false;
+						if (wayPoints[i][0].type === 0) {
+							el.className = 'marker_image';
+							isPhoto = true;
+						} else if(wayPoints[i][0].type === 1){
+							el.className = 'marker_voice';
+						}else{
+							el.className = 'marker_note';
+							isNote = true;
+						}
+						if(!isNote) {
+							el.addEventListener("click", function () {
+								onPhotoClick(id, files_info[id].name, files_info[id].description,files_info[id].properties, files_info[id].mine, files_info[id].b64Response, isPhoto);
+							}, false);
+						}
+						else{
+							el.addEventListener("click", function () {
+								onNoteClick(files_info[id]);
+							},false);
+						}
+
+
+						var point = [wayPoints[i][0].longitude, wayPoints[i][0].latitude];
+
+
+						for(var w = 0; w < points_in_map.length; w++){
+							if(points_in_map[w][0] === point[0] && points_in_map[w][1] === point[1]){
+								point[0]+= 0.00001000;
+								break;
+							}
+						}
+
+						points_in_map[i] = point;
+						points_by_id[id] = wayPoints[i][0];
+
+						new mapboxgl.Marker(el)
+								.setLngLat(point)
+								.addTo(map);
+					}
+				})();
+
+			}
+
+
+
+
+			map.addSource('route' + id, {
+				'type': 'geojson',
+				'data': {
+					'type': 'Feature',
+					'properties': {},
+					'geometry': {
+						'type': 'LineString',
+						'coordinates': points
+					}
+				}
+			});
+			map.addLayer({
+				'id': 'route' + id,
+				'type': 'line',
+				'source': 'route' +id,
+				'layout': {
+					'line-join': 'round',
+					'line-cap': 'round'
+				},
+				'paint': {
+					'line-color': hexaColor,
+					'line-width': 6
+				}
+			});
+
+		}).catch((error) => {
+			console.log(error);
+		});
+
+
+
+	}
+
+	function isUndefined(object){
+		return typeof object === "undefined";
+	}
+
+	function getObservationText(observation){
+		console.log(observation);
+		if(observation != null) {
+			let processedObservation = null;
+			try {
+				let infoJSON = JSON.parse(observation);
+				if (!isUndefined(infoJSON["eoi"])) {
+					let message = "Árvore " + (parseInt(infoJSON["eoi"]) + 1) + " " + infoJSON["protocol_name"] + ": " + infoJSON["observation_name"];
+					if(observation.includes("title"))
+						message+= " - " + infoJSON["title"];
+					processedObservation = message;
+				}else if(!isUndefined(infoJSON["title"])){
+					processedObservation ="Armadilha: " + infoJSON["title"];
+				}else if(!isUndefined(infoJSON["occurrence_type"])){
+					let occ_type = parseInt(infoJSON["occurrence_type"]) === 0 ? "Ação: " : "Evento: ";
+					processedObservation = occ_type + infoJSON["occurrence_name"];
+
+				}
+				return processedObservation;
+
+			} catch (e) {
+				console.log(e);
+
+				return undefined;
+			}
+
+		}
+		return undefined
+	}
+
+	function onNoteClick(note){
+		var modal = document.getElementById('specific_note_modal');
+		var modal_description = document.getElementById('specific_note_modal_description');
+
+		var modal_title = document.getElementById('specific_modal_title');
+
+		var begin = note['creation_timestamp'].replace('_','');
+		var year = begin.substring(0,4);
+		var month = begin.substring(4,6);
+		var day = begin.substring(6,8);
+		var hour = begin.substring(8,10);
+		var min = begin.substring(10,12);
+
+		modal_title.innerHTML = "Nota de " + note['owner'] + " às " + hour +":"+min;
+
+		if(typeof note['observation'] !== "undefined")
+			modal_description.innerText = getObservationText(note['observation']) + '\n'+ note.content;
+		else
+			modal_description.innerText = note.content;
+
+		modal.style.display='block';
+	}
+
+	function specificNoteClose(){
+		document.getElementById('specific_note_modal').style.display = 'none';
+	}
+
+	function msToTime(s) {
+
+		function pad(n, z) {
+			z = z || 2;
+			return ('00' + n).slice(-z);
+		}
+
+		var ms = s % 1000;
+		s = (s - ms) / 1000;
+		var secs = s % 60;
+		s = (s - secs) / 60;
+		var mins = s ;
+		//var hrs = (s - mins) / 60;
+
+		if(mins === 0){
+			return pad(secs) + " segundos";
+		}else
+			return mins + " minutos";
+		//return pad(hrs) + ':' + pad(mins) + ':' + pad(secs);
+	}
+
+
+
+	function getGPX(id_array) {
+		var users = [];
+		//console.log(document.getElementById('technician').innerHTML);
+		try{
+			users = document.getElementById('technician').innerHTML.split(' &amp; ');
+		}catch (e) {
+		}
+
+		//console.log("Get gpx");
+		//(function(){}());
+		for (var i = 0; i < id_array.length; i++) {
+			(function(){
+				var routeId = i;
+			var id = id_array[i];
+			gapi.client.drive.files.get({
+				'fileId': id,
+				'alt': 'media',
+			}).then(function (response) {
+				var gpx = response.body;
+				//console.log(gpx);
+
+				var userTrackName = gpx.substr(
+						gpx.indexOf("<name>") + 6,
+						gpx.indexOf("</name>")
+				);
+
+
+				var name = '';
+				if(visit.technicians.localeCompare('null') !== 0) {
+					name = userTrackName.split("_")[3];
+				}else
+					name = folderOwner;
+
+
+				var trk = gpx.substring(
+						gpx.indexOf("<trkseg>") + 8,
+						gpx.lastIndexOf("</trkseg>")
+				);
+
+				trk = trk.replaceAll("<trkseg>", '');
+				trk = trk.replaceAll("</trkseg>", '');
+
+				var arrayOfLines = trk.match(/[^\r\n]+/g);
+
+				var points = [];
+
+
+				for (var w = 0; w < arrayOfLines.length; w++) {
+					var line = arrayOfLines[w];
+					var lat = line.substring(
+							line.lastIndexOf('<trkpt lat="') + 12,
+							line.lastIndexOf('" lon="')
+					);
+					var ln = line.substring(
+							line.lastIndexOf('lon="') + 5,
+							line.lastIndexOf('"><time>')
+					);
+
+					var valid = true;
+					if(line.includes("<valid>")) {
+						var valid_string = line.substring(
+								line.lastIndexOf('<valid>') + 7,
+								line.lastIndexOf('</valid>')
+						);
+						valid = (valid_string === 'true');
+					}
+
+					if(valid) {
+						var point = [];
+						point.push(parseFloat(ln));
+						point.push(parseFloat(lat));
+						points.push(point);
+					}
+
+				}
+
+				var wayPoints = [];
+
+				if (routeId === 0) {
+					var wpts = gpx.substring(
+							gpx.indexOf("<wpt "),
+							gpx.lastIndexOf("</wpt>")
+					);
+					var wpts_array = wpts.split("<wpt ");
+					for (var k = 0; k < wpts_array.length; k++) {
+						var line = wpts_array[k];
+						if (line != "") {
+							var file_name = line.substring(
+									line.lastIndexOf('<name>') + 6,
+									line.lastIndexOf('</name>')
+							);
+							var lat = line.substring(
+									line.lastIndexOf('lat="') + 5,
+									line.lastIndexOf('" lon="')
+							);
+							var ln = line.substring(
+									line.lastIndexOf('lon="') + 5,
+									line.lastIndexOf('"><time>')
+							);
+
+							var waypoint = [];
+							var file_type;
+							if (file_name.includes("photo"))
+								file_type = 0;
+							else if(file_name.includes("audio"))
+								file_type = 1;
+							else file_type = 2;
+
+							var file = {
+								type: file_type,
+								name: file_name,
+								longitude: parseFloat(ln),
+								latitude: parseFloat(lat)
+							};
+
+							waypoint.push(file);
+							wayPoints.push(waypoint);
+						}
+
+
+					}
+				}
+
+				var hexadecimalColor = '#e55e5e';
+				//console.log(users);
+				if (users.length === 2 && name.localeCompare(users[1]) === 0)
+					hexadecimalColor = '#4d79ff';
+
+				addRoute(points, wayPoints, hexadecimalColor, name);
+				this.mPoints[name] = points;
+
+				var t1 = document.getElementById("t1");
+				var t2 = document.getElementById("t2");
+
+				//console.log(document.getElementById('square_' + name));
+				if (document.getElementById('square_' + name) === null) {
+					//var menu = document.getElementById('menu');
+					var initials = '';
+					if(name.localeCompare('') !== 0) {
+						var initialsArray = name.split(" ");
+						initialsArray.forEach(name => initials += name[0]);
+					}
+					var div = document.createElement('div');
+					var box = document.createElement('div');
+					var user = document.createElement('div');
+					box.setAttribute('class', 'color-box');
+					box.style.backgroundColor = hexadecimalColor;
+					//div.innerHTML = initials;
+					user.setAttribute('flex', 'right');
+					user.innerHTML = initials;
+
+					div.appendChild(box);
+					div.appendChild(user);
+
+					div.setAttribute('id', 'square_' + name);
+					// menu.insertBefore(div, menu.childNodes[0]);
+					if(t1.childElementCount === 0) {
+						t1.appendChild(div);
+						t1.style.display = 'block';
+					}
+					else if(t2.childElementCount === 0) {
+						t2.appendChild(div);
+						t2.style.display = 'block';
+					}
+				}
+
+			});
+		}());
+		}
+	}
+
+	function getVisitJSON(id){
+		gapi.client.drive.files.get({
+			'fileId': id,
+			'alt': 'media',
+		}).then(function(response) {
+			var json =  JSON.parse(response.body); //response.body contains the string value of the file
+			var plot_id = json['plot_id'];
+			var plots_jsons;
+
+			gapi.client.drive.files.get({
+				'fileId': '1O_mPNeJGPNftP01cfBQz5h-s36JhaCSB',
+				'alt': 'media',
+			}).then(function(response) {
+				plots_jsons = JSON.parse(response.body);
+
+				for(var j = 0; j < plots_jsons.features.length; j++) {
+					var idparcela = plots_jsons.features[j].properties['idparcela'];
+					if (idparcela == plot_id) {
+						var coordinates = plots_jsons.features[j].geometry.coordinates;
+						var toFocus = coordinates[0][0];
+						loadMap(toFocus, coordinates);
+						break;
+					}
+				}
+			});
+			// readTextFile("resources/json/parcelas.json", function(text){
+			// 	plots_jsons = JSON.parse(text);
+			//
+			// 	for(var j = 0; j < plots_jsons.features.length; j++){
+			// 		var idparcela = plots_jsons.features[j].properties['idparcela'];
+			// 		if(idparcela == plot_id){
+			// 			////console.log('loaded');
+			//
+			//
+			// 			/*document.getElementById('visit_title').innerHTML = plots_jsons.features[j].properties['nomeparcela'];
+			//
+			// 			document.getElementById('number_photos').innerHTML = json['number_photos'];
+			//
+			// 			document.getElementById('number_voice_records').innerHTML = json['number_voice_records'];
+			//
+			// 			var begin = json['time_begin'].replace('_','');
+			// 			var end = json['time_end'].replace('_','');
+			//
+			// 			var year = begin.substring(0,4);
+			// 			var month = begin.substring(4,6);
+			// 			var day = begin.substring(6,8);
+			// 			var hour = begin.substring(8,10);
+			// 			var min = begin.substring(10,12);
+			//
+			// 			document.getElementById('begin').innerHTML = day +'/' + month + '/' + year + ' ' + hour + ':' + min
+			//
+			//
+			//
+			// 			var begin_date = new Date(begin.replace(
+			// 					/^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+			// 					'$4:$5:$6 $2/$3/$1'
+			// 			));
+			//
+			// 			var end_date = new Date(end.replace(
+			// 					/^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+			// 					'$4:$5:$6 $2/$3/$1'
+			// 			));
+			//
+			// 			var difference = end_date - begin_date;
+			//
+			// 			document.getElementById('duration').innerHTML = msToTime(difference);
+			//
+			// 			document.getElementById("info").style.visibility = "visible";/*/
+			//
+			// 			var coordinates =  plots_jsons.features[j].geometry.coordinates;
+			// 			var toFocus = coordinates[0][0];
+			// 			loadMap(toFocus, coordinates);
+			// 			break;
+			// 		}
+			// 	}
+			// 	//data.features[0].geometry
+			// });
+
+		});
+	}
+
+	function compareNames( file1, file2 ) {
+		file1 = file1.substr(0,file1.length-4);
+		file2 = file2.substr(0,file2.length-4);
+
+		var aux = file1.split('_');
+		var file1_date = parseInt(aux[aux.length -1]);
+		aux = file2.split('_');
+		var file2_date = parseInt(aux[aux.length -1]);
+
+
+		if ( file1_date < file2_date ){
+			return -1;
+		}
+		if ( file1_date > file2_date ){
+			return 1;
+		}
+		return 0;
+	}
+
+	let mypromise = function functionOne(id) {
+		//console.log("Entered function");
+		return new Promise((resolve ,reject)=>{
+
+			var visit_json;
+			var visit_version = 0;
+			var lab_json;
+			var lab_version = 0;
+			gapi.client.drive.files.list({
+				'folderId': id,
+				'pageSize': 100,
+				'fields': "nextPageToken, files(id, name, mimeType)",
+				'q': `'${id}' in parents`
+			}).then(function (response) {
+				var files = response.result.files;
+				if (files && files.length > 0) {
+
+					for (var i = 0; i < files.length; i++) {
+						(function () {
+							var fileName = files[i].name;
+							if (fileName.includes("visit_json.txt")) {
+								var fileVersion = parseInt(fileName.split('.')[0][1]);
+								//console.log(fileVersion);
+								if (fileVersion > visit_version) {
+									visit_version = fileVersion;
+									visit_json = files[i].id;
+								}
+							} else if (fileName.includes("lab_json.txt")) {
+								var fileVersion = parseInt(fileName.split('.')[0][1]);
+								//console.log(fileVersion);
+								if (fileVersion > lab_version) {
+									lab_version = fileVersion;
+									lab_json = files[i].id;
+								}
+							}
+						})();
+					}
+					jsonIds = {
+						"visit_id": visit_json,
+						"lab_id": lab_json
+					};
+					resolve(jsonIds);
+				}
+				reject("Rejected");
+			});
+		});
+	};
+
+	function getJSONSIds(id) {
+		mypromise(id).then((res) => {
+			filesIds = res;
+			//console.log(filesIds['visit_id']);
+
+		}).catch((error) => {
+			//console.log(`Handling error as we received ${error}`);
+		});
+	}
+
+
+	let visitContentPromise = function functionOne() {
+		//console.log("Entered function");
+		return new Promise((resolve ,reject)=>{
+
+			if(jsonIds == null || jsonIds['visit_id'] == null)
+				reject("Rejected");
+
+			gapi.client.drive.files.get({
+				'fileId': jsonIds['visit_id'],
+				'alt': 'media',
+			}).then(function(response) {
+				resolve(response.body);
+			});
+		});
+	};
+
+	let labContentPromise = function functionOne() {
+		//console.log("Entered function");
+		return new Promise((resolve ,reject)=>{
+
+			if(jsonIds == null || jsonIds['lab_id'] == null)
+				reject("Rejected");
+
+			gapi.client.drive.files.get({
+				'fileId': jsonIds['lab_id'],
+				'alt': 'media',
+			}).then(function(response) {
+				resolve(response.body);
+			});
+		});
+	};
+
+
+	function getJSONsContents() {
+
+		visitContentPromise().then((res) => {
+			var json = JSON.parse(res);
+			json['plot_name'] = visit.plotName;
+			sessionStorage.setItem('visit_json', JSON.stringify(json));
+			//console.log(json);
+			labContentPromise().then((res) => {
+				sessionStorage.setItem('lab_json', JSON.stringify(res));
+				loaded = true;
+				document.getElementById("raw_frame").src = "rawdata.html";
+				//window.open(window.location.origin + '/FitoAgroSite/rawdata.html?visit_id=' + getUrlVars()['visit_id']);
+			}).catch((error) => {
+				//console.log(`Handling error as we received ${error}`);
+				loaded = true;
+				document.getElementById("raw_frame").src = "rawdata.html";
+				//window.open(window.location.origin + '/FitoAgroSite/rawdata.html?visit_id=' + getUrlVars()['visit_id']);
+			});
+		}).catch((error) => {
+			//console.log(`Handling error as we received ${error}`);
+		});
+
+	}
+
+	function getObservationText(observation){
+		if(!isUndefined(observation)) {
+			let processedObservation = null;
+			try {
+				if (!isUndefined(observation["eoi"])) {
+					let message = "Árvore " + (parseInt(observation["eoi"]) + 1) + " " + observation["protocol_name"] + ": " + observation["observation_name"];
+					if(!isUndefined(observation["title"]))
+						message+= " - " + observation["title"];
+					processedObservation = message;
+				}else if(!isUndefined(observation["title"])){
+					processedObservation ="Armadilha: " + observation["title"];
+				}else if(!isUndefined(observation["occurrence_type"])){
+					let occ_type = parseInt(observation["occurrence_type"]) === 0 ? "Ação: " : "Evento: ";
+					processedObservation = occ_type + observation["occurrence_name"];
+				}
+				return processedObservation;
+
+			} catch (e) {
+				console.log(e);
+
+				return undefined;
+			}
+
+		}
+		return undefined
+	}
+
+
+	function getPhotos(id){
+		gapi.client.drive.files.list({
+			'folderId' : id,
+			'pageSize': 100,
+			'fields': "nextPageToken, files(id, name, description, owners, hasThumbnail, thumbnailLink, properties)",
+			'q': `'${id}' in parents`
+		}).then(function(response) {
+			var files = response.result.files;
+			if (files && files.length > 0) {
+				document.getElementById("gallery_header").style.display = "flex";
+				document.getElementById("gallery").style.display = "flex";
+
+
+				var div = document.getElementById("photo_gallery");
+				div.style.display = "flex";
+				for(var i = 0; i < files.length; i++) {
+                    (function () {
+
+                    	var last = i === files.length -1;
+                        var fileOwner = files[i].owners[0].emailAddress.split(' ').join('');
+
+                        var mine = fileOwner.localeCompare(userEmail) === 0;
+
+                        var id = files[i].id;
+                        var name = files[i].name;
+                        files_map[name] = id;
+                        var description = files[i].description;
+                        var observation = getObservationText(files[i].properties);
+
+                        var imgContainer = document.createElement('a');
+						imgContainer.style.width = '64px';
+						imgContainer.style.height = '64px';
+						imgContainer.style.margin = '50px';
+						imgContainer.style.justifyContent = 'center';
+						imgContainer.setAttribute('class', 'spinner-border text-secondary');
+
+						var a = document.createElement('p');
+                        a.style.fontWeight = 'bold';
+                        a.style.textAlign = 'center';
+                        a.style.width = '125px';
+                        a.style.marginRight = '15px';
+                        a.style.marginLeft = '15px';
+
+						var splited_name = files[i].name.split("_");
+						var time = splited_name[splited_name.length -1];
+                        var hour = time.substring(0, 2);
+                        var min = time.substring(2, 4);
+                        a.innerHTML = hour + ":" + min;
+
+
+						var auxDiv = document.createElement('div');
+						auxDiv.style.cssFloat = 'left';
+						auxDiv.style.display = 'inline-block';
+
+
+						auxDiv.appendChild(imgContainer);
+						auxDiv.appendChild(document.createElement('br'));
+						auxDiv.appendChild(a);
+						auxDiv.setAttribute('class','gallery_item');
+						auxDiv.setAttribute('data-name',name);
+						div.appendChild(auxDiv);
+
+
+                        gapi.client.drive.files.get({
+                            'fileId': files[i].id,
+                            'alt': 'media',
+                        }).then(function (response) {
+
+                            var b64Response = btoa(response.body);
+
+                            var outputImg = document.createElement('img');
+                            outputImg.src = 'data:image/png;base64,' + b64Response;
+                            outputImg.setAttribute("class", 'image_thumbnail');
+
+							files_info[id] = {name:name, description:description,mine:mine,b64Response:b64Response,properties:observation};
+
+
+							outputImg.addEventListener("click", function (e) {
+								onPhotoClick(id,name,files_info[id].description,files_info[id].properties,mine,b64Response,true);
+
+                            });
+                            outputImg.style.objectFit = 'cover';
+                            outputImg.style.cursor = 'pointer';
+
+							imgContainer.setAttribute('class', '');
+							imgContainer.style.margin = "0";
+							imgContainer.appendChild(outputImg);
+
+                            if(last)
+								photos_lock = 0;
+
+                        });
+                })();
+				}
+			}else
+				photos_lock = 0;
+
+
+		});
+	}
+
+	function compareTimestamps(comment1, comment2) {
+
+		return comment1.timestamp.localeCompare(comment2.timestamp);
+	}
+
+	function getComments(file_id, isFile, initial){
+			gapi.client.drive.files.list({
+				'folderId' : COMMENTS_FOLDER_ID,
+				'pageSize': 100,
+				'q': `'${COMMENTS_FOLDER_ID}' in parents and mimeType = 'application/vnd.google-apps.folder' and not trashed`
+
+			}).then(function(response) {
+				var files = response.result.files;
+				for(var i = 0; i < files.length; i++){
+					var userFolder = files[i].name;
+					var mine = userFolder.localeCompare(userEmail) === 0;
+					if(mine)
+						myCommentsFolderId = files[i].id;
+					gapi.client.drive.files.list({
+						'folderId' : files[i].id,
+						'fields': "nextPageToken, files(id, name)",
+						'q': `'${files[i].id}' in parents and name = '` + file_id + `' and not trashed`
+
+					}).then(function(response) {
+						var files = response.result.files;
+						if (files.length > 0) {
+							gapi.client.drive.files.get({
+								'fileId': files[0].id,
+								'alt': 'media',
+							}).then(function (response) {
+								var comments_array = response.result.comments
+
+								for (var i = 0; i < comments_array.length; i++) {
+									if (!initial) {
+										if (isFile)
+											addCommentToFileDiv(comments_array[i].username, comments_array[i].description, comments_array[i].timestamp,mine);
+										else
+											addCommentToNoteDiv(comments_array[i].username, comments_array[i].description, comments_array[i].timestamp, mine);
+									}else if(!isFile){
+										var main_number_comments = document.getElementById("note_number_comments");
+										main_number_comments.innerText = parseInt(main_number_comments.innerText) + 1;
+									}
+								}
+
+							}, function (error) {
+								console.error(error)
+							});
+
+						}
+					});
+				}
+
+			});
+
+
+
+		// var params = {
+		// 	spreadsheetId: '1hqnI8buCJJFgQzgZCfJcEKoDuSpVOhtSfznLCaoRkR8',
+		// 	range: 'Folha1!A2:E',
+		// 	valueRenderOption: 'UNFORMATTED_VALUE',
+		// 	dateTimeRenderOption: 'FORMATTED_STRING',
+		// };
+		//
+		// var request = gapi.client.sheets.spreadsheets.values.get(params);
+		// request.then(function(response) {
+		// 	var aux = JSON.parse(response['body']);
+		// 	////console.log(aux);
+		// 	var values = aux.values;
+		// 	var number_comments = 0;
+		// 	if (typeof values !== 'undefined') {
+		// 		for (var i = 0; i < values.length; i++) {
+		// 			if (values[i][0].localeCompare(file_id) === 0) {
+		// 				number_comments++;
+		// 				if(!initial) {
+		// 					if (isFile)
+		// 						addCommentToFileDiv(values[i][2], values[i][3], values[i][4]);
+		// 					else
+		// 						addCommentToNoteDiv(values[i][2], values[i][3], values[i][4])
+		// 				}
+		// 			}
+		// 		}
+		// 		var modal_number_comments;
+		//
+		// 		if(isFile)
+		// 			modal_number_comments = document.getElementById("modal_number_comments");
+		// 		else {
+		// 			modal_number_comments = document.getElementById("note_modal_number_comments");
+		// 			var main_number_comments = document.getElementById("note_number_comments");
+		// 			main_number_comments.innerText = number_comments;
+		//
+		// 		}
+		//
+		// 		modal_number_comments.innerText = number_comments;
+		// 	}
+		//
+		// }, function(reason) {
+		// 	console.error('error: ' + reason.result.error.message);
+		// });
+
+	}
+
+	function deleteComment(file_id,timestamp,div, no_comments,modal_counter,page_counter){
+		if (confirm("Pretende eliminar o comentário?")) {
+
+			//TODO eliminar o comentario
+			gapi.client.drive.files.list({
+				'folderId' : myCommentsFolderId,
+				'fields': "nextPageToken, files(id, name)",
+				'q': `'${myCommentsFolderId}' in parents and name = '` + file_id + `' and not trashed`
+
+			}).then(function(response) {
+				var files = response.result.files;
+				if (files.length > 0) {
+					gapi.client.drive.files.get({
+						'fileId': files[0].id,
+						'alt': 'media',
+					}).then(function (response) {
+						var comments_array = response.result.comments;
+						for(var i = 0; i < comments_array.length; i++){
+							var comment = comments_array[i];
+							if(comment.timestamp.localeCompare(timestamp) === 0){
+								comments_array.splice(i, 1);
+								break;
+							}
+						}
+						var finalComments = {comments: comments_array};
+
+						updateJSONFIle(files[0].id,JSON.stringify(finalComments),null,null,null);
+
+						div.remove();
+
+						var newCount = parseInt(modal_counter.innerText) - 1;
+						modal_counter.innerText = newCount;
+						if(newCount === 0)
+							no_comments.style.display ='block'
+						if(page_counter !== null)
+							page_counter.innerText = newCount;
+
+						alert('Comentário eliminado com sucesso.')
+
+					});
+				}
+			});
+
+
+
+		}
+
+	}
+
+	function addCommentToFileDiv(userName,description,original_timestamp,mine){
+
+		var m = new Date(original_timestamp);
+		var timestamp =
+				m.getUTCFullYear() + "/" +
+				("0" + (m.getUTCMonth()+1)).slice(-2) + "/" +
+				("0" + m.getUTCDate()).slice(-2) + " " +
+				("0" + m.getUTCHours()).slice(-2) + ":" +
+				("0" + m.getUTCMinutes()).slice(-2) + ":" +
+				("0" + m.getUTCSeconds()).slice(-2);
+
+		var no_comments = document.getElementById('file_no_comments');
+		no_comments.style.display = 'none';
+		var mainDiv = document.getElementById('file_comments');
+
+		var commentDiv = document.createElement('div');
+		var columns = document.createElement('div');
+		var firstLine = document.createElement('div');
+		var commentText = document.createElement('p');
+		var commentOwner = document.createElement('a');
+		var commentTimestamp = document.createElement('a');
+
+		var userImage = document.createElement('a');
+		var breakLine = document.createElement("br");
+		var separator = document.createElement("hr");
+
+
+		firstLine.style.width = '80%';
+		firstLine.style.cssFloat = 'left';
+		userImage.style.cssFloat = 'left';
+
+		commentText.innerText = description;
+		commentText.style.marginLeft = '30px';
+		commentOwner.innerText = userName;
+		commentOwner.style.fontSize = '12px';
+		commentOwner.style.fontWeight = 'bold';
+
+		commentTimestamp.innerText = timestamp;
+		commentTimestamp.style.color = 'gray';
+		commentTimestamp.style.fontSize = '12px';
+
+		userImage.innerHTML = getPhotoByName(userName);
+		userImage.style.margin = '10px';
+		firstLine.appendChild(document.createTextNode(" "));
+		firstLine.appendChild(commentOwner);
+		firstLine.appendChild(document.createTextNode(" "));
+		firstLine.appendChild(commentTimestamp);
+
+		if(mine) {
+			var deleteIcon = document.createElement('div');
+			deleteIcon.innerHTML =
+					`<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+				<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+				</svg>`
+
+			deleteIcon.style.cssFloat = 'right';
+
+			deleteIcon.onclick = function () {
+				deleteComment(actual_file_id, original_timestamp, columns, no_comments, document.getElementById("modal_number_comments"), null)
+			};
+			firstLine.appendChild(deleteIcon);
+
+		}
+
+
+		commentDiv.appendChild(firstLine);
+		commentDiv.appendChild(breakLine);
+		commentDiv.appendChild(commentText);
+
+		columns.appendChild(userImage);
+		columns.appendChild(commentDiv);
+		columns.appendChild(separator);
+		columns.setAttribute('class','comment_item');
+		columns.setAttribute('data-timestramp',timestamp);
+
+		mainDiv.prepend(columns);
+
+
+		var modal_number_comments;
+
+		modal_number_comments = document.getElementById("modal_number_comments");
+
+		modal_number_comments.innerText = parseInt(modal_number_comments.innerText) + 1;
+
+		var $wrapper = $('#file_comments');
+		$wrapper.find('.comment_item').sort(function(a, b) {
+			return -a.dataset.timestramp.localeCompare(b.dataset.timestramp);
+		}).appendTo($wrapper);
+
+
+	}
+
+	function updateJSONFIle(fileId, fileData, callback,description,timestamp) {
+		const boundary = '-------314159265358979323846';
+		const delimiter = "\r\n--" + boundary + "\r\n";
+		const close_delim = "\r\n--" + boundary + "--";
+
+		const contentType = 'application/json';
+
+
+		var multipartRequestBody =
+				delimiter +
+				'Content-Type: application/json\r\n\r\n' +
+				delimiter +
+				'Content-Type: ' + contentType + '\r\n\r\n' +
+				fileData +
+				close_delim;
+
+		var request = gapi.client.request({
+			'path': '/upload/drive/v2/files/' + fileId,
+			'method': 'PUT',
+			'params': {'uploadType': 'multipart','alt': 'json'},
+			'headers': {
+				'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+			},
+			'body': multipartRequestBody}).then(function(response) {
+				if(callback)
+					callback(description,timestamp);
+			commenting = false;
+		},function(error){
+			alert('Aconteceu um erro. Tento mais tarde.')
+			commenting = false;
+		});
+	}
+
+	function createJSON(name,data,parent,callback,description,timestamp) {
+		const boundary = '-------314159265358979323846';
+		const delimiter = "\r\n--" + boundary + "\r\n";
+		const close_delim = "\r\n--" + boundary + "--";
+
+		const contentType = 'application/json';
+
+		var metadata = {
+			'name': name,
+			'mimeType': contentType,
+			'parents': [parent]
+		};
+
+		var multipartRequestBody =
+				delimiter +
+				'Content-Type: application/json\r\n\r\n' +
+				JSON.stringify(metadata) +
+				delimiter +
+				'Content-Type: ' + contentType + '\r\n\r\n' +
+				data +
+				close_delim;
+
+		var request = gapi.client.request({
+			'path': '/upload/drive/v3/files',
+			'method': 'POST',
+			'params': {'uploadType': 'multipart'},
+			'headers': {
+				'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+			},
+			'body': multipartRequestBody}).then(function(response) {
+				if(callback)
+					callback(description,timestamp);
+				commenting = false;
+		},function(error){
+			alert('Aconteceu um erro. Tento mais tarde.')
+			commenting = false;
+		});
+	}
+
+
+	function endCommentProcess(description, timestamp) {
+		addCommentToFileDiv(userName,description,timestamp,true);
+		document.getElementById('file_comment_input').value = '';
+		// var modal_number_comments = document.getElementById("modal_number_comments");
+		// modal_number_comments.innerText = parseInt(modal_number_comments.innerText) + 1;
+	}
+
+	function endNoteCommentProcess(description, timestamp) {
+		addCommentToNoteDiv(userName,description,timestamp,true);
+		document.getElementById('note_comment_input').value = '';
+		// var modal_number_comments = document.getElementById("note_modal_number_comments");
+		// modal_number_comments.innerText = parseInt(modal_number_comments.innerText) + 1;
+		//
+		// var main_number_comments = document.getElementById("note_number_comments");
+		// main_number_comments.innerText = parseInt(main_number_comments.innerText) + 1;
+
+	}
+
+	function addNewCommentToFile(){
+
+		if(!commenting){
+
+			var timestamp = new Date().toISOString();
+
+			var comment_input = document.getElementById('file_comment_input');
+			var description = comment_input.value;
+			if(description) {
+
+				comment_input.value = '';
+
+				commenting = true;
+
+				gapi.client.drive.files.list({
+					'folderId' : COMMENTS_FOLDER_ID,
+					'pageSize': 100,
+					'fields': "nextPageToken, files(id, name)",
+					'q': `'${COMMENTS_FOLDER_ID}' in parents and name = '` + userEmail + `' and not trashed`
+				}).then(function(response) {
+					var files = response.result.files;
+					if(files.length === 0){
+						gapi.client.drive.files.create({
+							"name" : userEmail,
+							"mimeType" : "application/vnd.google-apps.folder",
+							"parents" : [COMMENTS_FOLDER_ID],
+						}).then(function (response) {
+							myCommentsFolderId = response.result.id;
+							var comments = { comments:[{timestamp: timestamp, username: userName, description: description}] };
+
+							createJSON(actual_file_id,JSON.stringify(comments),response.result.id,endCommentProcess,description,timestamp);
+						},function(error){
+							alert('Aconteceu um erro. Tento mais tarde.')
+							commenting = false;
+						});
+
+					}else{
+						var folderId = files[0].id;
+						myCommentsFolderId = folderId;
+						gapi.client.drive.files.list({
+							'folderId' : files[0].id,
+							'pageSize': 100,
+							'fields': "nextPageToken, files(id, name)",
+							'q': `'${files[0].id}' in parents and name = '` + actual_file_id + `' and not trashed`
+						}).then(function(response) {
+							var files = response.result.files;
+							if(files.length > 0) {
+								gapi.client.drive.files.get({
+									'fileId': files[0].id,
+									'alt': 'media',
+								}).then(function (response) {
+									var obj = JSON.parse(response.body);
+									var comment = {timestamp: timestamp, username: userName, description: description};
+									obj.comments.push(comment);
+
+									updateJSONFIle(files[0].id,JSON.stringify(obj),endCommentProcess,description,timestamp);
+
+								},function(error){
+									alert('Aconteceu um erro. Tento mais tarde.')
+									commenting = false;
+								});
+							}else{
+								var comments = { comments:[{timestamp: timestamp, username: userName, description: description}] };
+
+								createJSON(actual_file_id,JSON.stringify(comments),folderId,endCommentProcess,description,timestamp);
+							}
+						},function(error){
+							alert('Aconteceu um erro. Tento mais tarde.')
+							commenting = false;
+						});
+
+
+
+
+					}
+
+				});
+
+
+				// var params = {
+				// 	spreadsheetId: '1hqnI8buCJJFgQzgZCfJcEKoDuSpVOhtSfznLCaoRkR8',
+				// 	range: 'Folha1!A:E',
+				// 	valueInputOption: 'RAW',
+				// 	insertDataOption: 'INSERT_ROWS',
+				// };
+				//
+				// var valueRangeBody = {
+				// 	"values": [[actual_file_id,userEmail,userName,description,timestamp]]
+				// };
+				//
+				// var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+				// request.then(function(response) {
+				//
+				// 	addCommentToFileDiv(userName,description,timestamp);
+				// 	comment_input.value = '';
+				// 	var modal_number_comments = document.getElementById("modal_number_comments");
+				// 	var newCount = parseInt(modal_number_comments.innerText) + 1;
+				// 	modal_number_comments.innerText = newCount;
+				//
+				// 	commenting = false;
+				//
+				// }, function(reason) {
+				// 	console.error('error: ' + reason.result.error.message);
+				// 	alert('Aconteceu um erro. Tento mais tarde.')
+				// 	commenting = false;
+				//
+				// });
+
+			}
+
+		}
+
+	}
+
+	function addCommentToNoteDiv(userName,description,original_timestamp,mine) {
+
+		var m = new Date(original_timestamp);
+		var timestamp =
+				m.getUTCFullYear() + "/" +
+				("0" + (m.getUTCMonth() + 1)).slice(-2) + "/" +
+				("0" + m.getUTCDate()).slice(-2) + " " +
+				("0" + m.getUTCHours()).slice(-2) + ":" +
+				("0" + m.getUTCMinutes()).slice(-2) + ":" +
+				("0" + m.getUTCSeconds()).slice(-2);
+
+		var no_comments = document.getElementById('note_no_comments');
+		no_comments.style.display = 'none';
+		var mainDiv = document.getElementById('note_comments');
+
+		var commentDiv = document.createElement('div');
+		var columns = document.createElement('div');
+		var firstLine = document.createElement('div');
+		var commentText = document.createElement('p');
+		var commentOwner = document.createElement('a');
+		var commentTimestamp = document.createElement('a');
+
+		var userImage = document.createElement('a');
+		var breakLine = document.createElement("br");
+		var separator = document.createElement("hr");
+
+
+
+		firstLine.style.width = '80%';
+		firstLine.style.cssFloat = 'left';
+		userImage.style.cssFloat = 'left';
+
+		commentText.innerText = description;
+		commentText.style.marginLeft = '30px';
+		commentOwner.innerText = userName;
+		commentOwner.style.fontSize = '12px';
+		commentOwner.style.fontWeight = 'bold';
+
+		commentTimestamp.innerText = timestamp;
+		commentTimestamp.style.color = 'gray';
+		commentTimestamp.style.fontSize = '12px';
+
+		userImage.innerHTML = getPhotoByName(userName);
+		userImage.style.margin = '10px';
+		firstLine.appendChild(document.createTextNode(" "));
+		firstLine.appendChild(commentOwner);
+		firstLine.appendChild(document.createTextNode(" "));
+		firstLine.appendChild(commentTimestamp);
+		if(mine) {
+			var deleteIcon = document.createElement('div');
+			deleteIcon.innerHTML =
+					`<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+				<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+				</svg>`;
+
+			deleteIcon.style.cssFloat = 'right';
+			deleteIcon.onclick = function () {
+				deleteComment(visit.fileId, original_timestamp, columns, no_comments, document.getElementById("note_modal_number_comments"), document.getElementById("note_number_comments"))
+			};
+			firstLine.appendChild(deleteIcon);
+
+		}
+
+		commentDiv.appendChild(firstLine);
+		commentDiv.appendChild(breakLine);
+		commentDiv.appendChild(commentText);
+
+		columns.appendChild(userImage);
+		columns.appendChild(commentDiv)
+		columns.appendChild(separator);
+
+		columns.setAttribute('class','note_comment_item');
+		columns.setAttribute('data-timestramp',timestamp);
+
+		mainDiv.prepend(columns);
+
+
+		var modal_number_comments = document.getElementById("note_modal_number_comments");
+		var number = parseInt(modal_number_comments.innerText) + 1
+		modal_number_comments.innerText = number;
+
+		var $wrapper = $('#note_comments');
+		$wrapper.find('.note_comment_item').sort(function(a, b) {
+			return -a.dataset.timestramp.localeCompare(b.dataset.timestramp);
+		}).appendTo($wrapper);
+
+	}
+
+	function addNewCommentToNote(){
+
+		if(!commenting){
+
+			var timestamp = new Date().toISOString();
+
+			var comment_input = document.getElementById('note_comment_input');
+			var description = comment_input.value;
+			if(description) {
+
+				comment_input.value = '';
+
+				commenting = true;
+
+				gapi.client.drive.files.list({
+					'folderId' : COMMENTS_FOLDER_ID,
+					'pageSize': 100,
+					'fields': "nextPageToken, files(id, name)",
+					'q': `'${COMMENTS_FOLDER_ID}' in parents and name = '` + userEmail + `' and not trashed`
+				}).then(function(response) {
+					var files = response.result.files;
+					if(files.length === 0){
+						gapi.client.drive.files.create({
+							"name" : userEmail,
+							"mimeType" : "application/vnd.google-apps.folder",
+							"parents" : [COMMENTS_FOLDER_ID],
+						}).then(function (response) {
+							var comments = { comments:[{timestamp: timestamp, username: userName, description: description}] };
+
+							createJSON(visit.fileId,JSON.stringify(comments),response.result.id,endNoteCommentProcess,description,timestamp);
+						},function(error){
+							alert('Aconteceu um erro. Tento mais tarde.')
+							commenting = false;
+						});
+
+					}else{
+						var folderId = files[0].id;
+						gapi.client.drive.files.list({
+							'folderId' : files[0].id,
+							'pageSize': 100,
+							'fields': "nextPageToken, files(id, name)",
+							'q': `'${files[0].id}' in parents and name = '` + visit.fileId + `' and not trashed`
+						}).then(function(response) {
+							var files = response.result.files;
+							if(files.length > 0) {
+								gapi.client.drive.files.get({
+									'fileId': files[0].id,
+									'alt': 'media',
+								}).then(function (response) {
+									var obj = JSON.parse(response.body);
+									var comment = {timestamp: timestamp, username: userName, description: description};
+									obj.comments.push(comment);
+
+									updateJSONFIle(files[0].id,JSON.stringify(obj),endNoteCommentProcess,description,timestamp);
+
+								},function(error){
+									alert('Aconteceu um erro. Tento mais tarde.')
+									commenting = false;
+								});
+							}else{
+								var comments = { comments:[{timestamp: timestamp, username: userName, description: description}] };
+
+								createJSON(visit.fileId,JSON.stringify(comments),folderId,endNoteCommentProcess,description,timestamp);
+							}
+						},function(error){
+							alert('Aconteceu um erro. Tento mais tarde.')
+							commenting = false;
+						});
+
+
+
+
+					}
+
+				});
+
+
+			}
+		}
+
+	}
+
+	function getPhotoByName(user){
+		userNames = user.split(' ');
+		if(userNames.length > 1)
+			return '<a id="user_icon" style="color: white; font-weight: bolder; font-family:sans-serif; font-size: 14px; width: 30px; height: 30px; line-height: unset;' +
+					'-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; padding-top:5px;padding-bottom:5px; padding-left:3px; padding-right:3px; background-color: #008577">'
+					+ userNames[0].substr(0,1).toUpperCase() + userNames[userNames.length-1].substr(0,1).toUpperCase() + '</a>';
+		else
+			return '<a id="user_icon" style="color: dimgrey; font-weight: bolder; font-family:sans-serif; font-size: 14px; width: 30px; height: 30px; line-height: unset;' +
+					'-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; padding-top:5px;padding-bottom:5px; padding-left:3px; padding-right:3px; background-color: #008577">'
+					+ userNames[0].substr(0,1).toUpperCase() + '</a>';
+
+	}
+
+
+
+	let lastFunction;
+
+	function onPhotoClick(id,name,description,observation,mine,b64Response,photo){
+		actual_file_id = id;
+
+		var modal = document.getElementById("myModal");
+		var modal_description = document.getElementById("modal_description");
+		var modal_date = document.getElementById("modal_date");
+
+		var modal_edit = document.getElementById("modal_edit");
+		var modal_locate = document.getElementById("modal_locate");
+
+		var modal_photo = document.getElementById("modal_photo");
+		var modal_audio = document.getElementById("modal_audio");
+
+
+		if(typeof points_by_id[actual_file_id] !== "undefined") {
+			modal_locate.style.display = "block";
+			//console.log(name+" : " + points_by_id[actual_file_id].latitude +", " + points_by_id[actual_file_id].longitude);
+		}
+
+
+		modal_date.innerHTML = getDate(name);
+
+		if(!isUndefined(observation)){
+			if(observation.includes("Armadilha: ")){
+				let enemy = observation.substr(11,observation.length);
+				if(countsPerTraps[enemy] !== "undefined"){
+					observation+= " ("+ countsPerTraps[enemy].value + ")";
+				}
+			}
+		}
+
+		if (!isUndefined(description) && !isUndefined(observation)) {
+			modal_description.innerText = observation + '\n' + description;
+		}
+		else if(!isUndefined(description))
+			modal_description.innerText = description;
+		else if(!isUndefined(observation))
+			modal_description.innerText = observation;
+		else
+			modal_description.innerText = "Sem descrição.";
+
+		if(photo) {
+			modal_audio.style.display = "none";
+			modal_photo.style.display = "block";
+
+			if(!isUndefined(lastFunction))
+				modal_photo.removeEventListener("click",lastFunction);
+
+			lastFunction = function(){
+				openImage(name,b64Response);
+			};
+
+			modal_photo.src = 'data:image/png;base64,' + b64Response;
+			modal_photo.width = 300;
+			modal_photo.addEventListener('click',lastFunction);
+		}else{
+			modal_audio.style.display = "block";
+			modal_photo.style.display = "none";
+			modal_audio.src = 'data:audio/mp3;base64,' + b64Response;
+			modal_audio.getElementById('btnDownload').addEventListener('click',null);
+		}
+
+		modal_edit.style.display = 'none';
+
+		// if(mine){
+		// 	modal_edit.style.display='block';
+		// }else {
+		// 	modal_edit.style.display = 'none';
+		// }
+
+
+		getComments(id,true,false);
+
+		modal.style.display = "block";
+
+
+	}
+
+	function openImage(name,b64Response){
+		let w = window.open('',name);
+		//console.log(b64Response);
+		if (w.document.body.getElementsByTagName('img').length === 0) {
+			let img = w.document.body.appendChild(w.document.createElement('img'));
+			img.src = 'data:image/png;base64,' + b64Response;
+			let originalWidth = img.width;
+			let originalHeight = img.height;
+
+			img.setAttribute("height", "768");
+			let smallWidth = img.width;
+
+			img.addEventListener('click', function () {
+				if (img.width === originalWidth && img.height === originalHeight) {
+					img.width = smallWidth;
+					img.setAttribute("height", "768")
+				} else {
+					img.width = originalWidth;
+					img.height = originalHeight;
+				}
+			});
+		}
+	}
+
+	function onNoteModalClose(){
+		document.getElementById('note_modal').style.display = 'none';
+		var modal_number_comments = document.getElementById("note_modal_number_comments");
+		modal_number_comments.innerText = '0';
+
+		var comments_div = document.getElementById('note_comments');
+		var file_no_comments = document.getElementById('note_no_comments');
+		file_no_comments.style.display = 'block';
+		comments_div.innerHTML = '';
+		comments_div.appendChild(file_no_comments)
+	}
+
+
+	function checkNoteComments(){
+
+		getComments(visit.fileId,false,false);
+
+		var modal = document.getElementById('note_modal');
+		var modal_description = document.getElementById('note_modal_description');
+		modal_description.innerText = visit.notes;
+
+		modal.style.display='block';
+	}
+
+	function zoomOnMap() {
+		onModalClose();
+		map.flyTo({
+			center: [
+				points_by_id[actual_file_id].longitude,
+				points_by_id[actual_file_id].latitude
+
+			],
+			essential: true // this animation is considered essential with respect to prefers-reduced-motion
+		});
+	}
+
+	function onModalClose() {
+		var modal_number_comments = document.getElementById("modal_number_comments");
+		document.getElementById("file_comment_input").value = '';
+		modal_number_comments.innerText = '0';
+
+		var modal_locate = document.getElementById("modal_locate");
+		modal_locate.style.display = 'hidden';
+
+
+		document.getElementById('myModal').style.display = 'none';
+		var comments_div = document.getElementById('file_comments');
+		var file_no_comments = document.getElementById('file_no_comments');
+		file_no_comments.style.display = 'block';
+		comments_div.innerHTML = '';
+		comments_div.appendChild(file_no_comments)
+		cancelEdit();
+	}
+
+	function tryEdit(){
+		var editIcon = document.getElementById("modal_edit");
+		var closeIcon = document.getElementById("modal_edit_close");
+		var confirmIcon = document.getElementById("modal_edit_confirm");
+		var modal_locate = document.getElementById("modal_locate");
+
+		var description = document.getElementById("modal_description");
+		var description_input = document.getElementById("modal_description_edit");
+
+		description.style.display = 'none';
+		description_input.style.display = 'block';
+		if(description.innerText.localeCompare("Sem descrição.") !== 0)
+			description_input.value = description.innerText;
+		editIcon.style.display = 'none';
+		modal_locate.style.display = 'none';
+		closeIcon.style.display = 'block';
+		confirmIcon.style.display = 'block';
+
+		description_input.focus();
+
+	}
+
+	function cancelEdit(){
+		var editIcon = document.getElementById("modal_edit");
+		var closeIcon = document.getElementById("modal_edit_close");
+		var confirmIcon = document.getElementById("modal_edit_confirm");
+
+		var description = document.getElementById("modal_description");
+		var description_input = document.getElementById("modal_description_edit");
+
+		var modal_locate = document.getElementById("modal_locate");
+
+		if(typeof points_by_id[actual_file_id] !== "undefined") {
+			modal_locate.style.display = "block";
+		}
+
+		description.style.display = 'block';
+		description_input.style.display = 'none';
+		description_input.value = "";
+		editIcon.style.display = 'block';
+		closeIcon.style.display = 'none';
+		confirmIcon.style.display = 'none';
+
+	}
+
+	function confirmEdit() {
+		var editIcon = document.getElementById("modal_edit");
+		var closeIcon = document.getElementById("modal_edit_close");
+		var confirmIcon = document.getElementById("modal_edit_confirm");
+		var modal_locate = document.getElementById("modal_locate");
+
+		var description = document.getElementById("modal_description");
+		var description_input = document.getElementById("modal_description_edit");
+		if(description_input.value && description_input.value.localeCompare(description.innerText) !==0){
+			var body = {'description': description_input.value};
+			var request = gapi.client.drive.files.update({
+				'fileId': actual_file_id,
+				'resource': body
+			});
+			request.execute(function(resp) {
+				description.style.display = 'block';
+				description.innerText = description_input.value;
+				description_input.style.display = 'none';
+				description_input.value = "";
+				editIcon.style.display = 'block';
+				closeIcon.style.display = 'none';
+				confirmIcon.style.display = 'none';
+
+
+				if(typeof points_by_id[actual_file_id] !== "undefined") {
+					modal_locate.style.display = "block";
+				}
+
+				files_info[actual_file_id].description = description.innerText;
+			});
+
+		}else {
+			description.style.display = 'block';
+			description_input.style.display = 'none';
+			description_input.value = "";
+			editIcon.style.display = 'block';
+			closeIcon.style.display = 'none';
+			confirmIcon.style.display = 'none';
+
+			if(typeof points_by_id[actual_file_id] !== "undefined") {
+				modal_locate.style.display = "block";
+			}
+		}
+
+
+
+	}
+
+	function getMonth(month) {
+        switch (month) { //get month
+            case '01':
+                month = " Jan ";
+                break;
+            case '02':
+                month = " Fev ";
+                break;
+            case '03':
+                month = " Mar ";
+                break;
+            case '04':
+                month = " Abr ";
+                break;
+            case '05':
+                month = " Mai ";
+                break;
+            case '06':
+                month = " Jun ";
+                break;
+            case '07':
+                month = " Jul ";
+                break;
+            case '08':
+                month = " Ago ";
+                break;
+            case '09':
+                month = " Set ";
+                break;
+            case '10':
+                month = " Out ";
+                break;
+            case '11':
+                month = " Nov ";
+                break;
+            case '12':
+                month = " Dez ";
+                break;
+        }
+        return month
+    }
+
+
+
+	function getDate(name) {
+        var splittedName = name.split('_');
+        var raw_time = splittedName[splittedName.length-1];
+        var raw_day = splittedName[splittedName.length-2];
+
+        var day = raw_day.substr(6,2);
+        if(day.charAt(0) === '0'){
+            day = day.substr(1,1);
+        }
+
+        var month = getMonth(raw_day.substr(4,2));
+
+        var hour = raw_time.substr(0,2);
+        var minutes = raw_time.substr(2,2);
+
+        return day + " de " + month + " às " + hour + ":"+minutes;
+    }
+
+	function getAudios(id){
+		gapi.client.drive.files.list({
+			'folderId' : id,
+			'pageSize': 100,
+			'fields': "nextPageToken, files(id, name, description, owners, properties)",
+			'q': `'${id}' in parents`
+		}).then(function(response) {
+			var files = response.result.files;
+			if (files && files.length > 0) {
+				document.getElementById("gallery_header").style.display = "flex";
+				document.getElementById("gallery").style.display = "flex";
+
+				var div = document.getElementById("photo_gallery");
+
+				div.style.display = "flex";
+
+				for(var i = 0; i < files.length; i++) {
+					(function () {
+
+						var last = i === files.length -1;
+
+						var fileOwner = files[i].owners[0].emailAddress.split(' ').join('');
+
+						var mine = fileOwner.localeCompare(userEmail) === 0;
+
+						var id = files[i].id;
+						var name = files[i].name;
+						files_map[name] = id;
+						var description = files[i].description;
+						var observation = getObservationText(files[i].properties);
+
+						var imgContainer = document.createElement('a');
+
+						imgContainer.style.width = '64px';
+						imgContainer.style.height = '64px';
+						imgContainer.style.margin = '50px';
+						imgContainer.style.justifyContent = 'center';
+						imgContainer.setAttribute('class', 'spinner-border text-secondary');
+
+						var a = document.createElement('p');
+						a.style.fontWeight = 'bold';
+						a.style.textAlign = 'center';
+						a.style.width = '125px';
+						a.style.marginRight = '15px';
+						a.style.marginLeft = '15px';
+
+						var splited_name = files[i].name.split("_");
+						var time = splited_name[splited_name.length -1];
+
+						var hour = time.substring(0, 2);
+						var min = time.substring(2, 4);
+						a.innerHTML = hour + ":" + min;
+
+
+						var auxDiv = document.createElement('div');
+						auxDiv.style.cssFloat = 'left';
+						auxDiv.style.display = 'inline-block';
+
+						auxDiv.appendChild(imgContainer);
+						auxDiv.appendChild(document.createElement('br'));
+						auxDiv.appendChild(a);
+						auxDiv.setAttribute('class','gallery_item');
+						auxDiv.setAttribute('data-name',name);
+						div.appendChild(auxDiv);
+
+
+						gapi.client.drive.files.get({
+							'fileId': id,
+							'alt': 'media',
+						}).then(function (response) {
+							////console.log("Audio");
+							var b64Response = btoa(response.body);
+
+							var outputImg = document.createElement('img');
+							outputImg.src = 'resources/images/audio_icon.png';
+							outputImg.setAttribute("class", 'image_thumbnail');
+
+							files_info[id] = {name:name, description:description,mine:mine,b64Response:b64Response,properties:observation};
+
+							outputImg.addEventListener("click", function (e) {
+								onPhotoClick(id,name,files_info[id].description,files_info[id].properties,mine,b64Response,false);
+							});
+
+
+							outputImg.style.objectFit = 'cover';
+							outputImg.style.cursor = 'pointer';
+
+							imgContainer.setAttribute('class', '');
+							imgContainer.style.margin = '0';
+							imgContainer.appendChild(outputImg);
+
+							if(last)
+								audio_lock = 0;
+
+
+						});
+
+
+					})();
+				}
+			}else
+				audio_lock = 0;
+
+		});
+	}
+
+
+
+	function getNotes(id){
+		gapi.client.drive.files.list({
+			'folderId' : id,
+			'pageSize': 100,
+			'fields': "nextPageToken, files(id, name)",
+			'q': `'${id}' in parents`
+		}).then(function(response) {
+			var files = response.result.files;
+			if (files && files.length > 0) {
+				var a = document.getElementById("no_notes");
+				a.innerHTML = "";
+				var div = document.getElementById("note_gallery");
+				var ul = document.getElementById("notes_ul");
+				for(var i = 0; i < files.length; i++){
+					gapi.client.drive.files.get({
+						'fileId': files[i].id,
+						'alt': 'media',
+					}).then(function(response) {
+						var li = document.createElement('li');
+						ul.appendChild(li);
+						li.innerHTML=li.innerHTML + response.body;
+
+					});
+				}
+			}
+		});
+	}
+
+	function appendPre(message) {
+		var pre = document.getElementById('content');
+		var textContent = document.createTextNode(message + '\n');
+		pre.appendChild(textContent);
+	}
+
+	function listFolder() {
+		var fileId = getUrlVars()['visit_id'];
+		var json_id = '';
+		var gpx_id = [];
+		var photo_id = '';
+		var audio_id = '';
+
+		gapi.client.drive.files.list({
+			'folderId' : fileId,
+			'pageSize': 100,
+			'fields': "nextPageToken, files(id, name, owners)",
+			'q': `'${fileId}' in parents`
+		}).then(function(response) {
+			var files = response.result.files;
+			if (files && files.length > 0) {
+				for(var i = 0; i < files.length; i++){
+
+					if(folderOwner.localeCompare('') === 0 && files[i].name.localeCompare("Audio") !== 0)
+						folderOwner = files[i].owners[0].displayName;
+
+					var id = files[i].id;
+
+					if(files[i].name.includes('json')){
+						json_id = id;
+						//getVisitJSON(id);
+					}
+					else if(files[i].name.includes('gpx')){
+						gpx_id.push(id);
+						//getGPX(files[i].id);
+					}
+					else if(files[i].name == 'Photos'){
+						photo_id = id;
+						//getPhotos(files[i].id);
+					}
+					else if(files[i].name == 'Audio'){
+						audio_id = id;
+						//getAudios(files[i].id);
+
+					}
+					else if(files[i].name == 'Notes'){
+						//getNotes(files[i].id);
+						noteFolder = files[i].id;
+					}
+				}
+				if(noteFolder != '')
+					getNotes(noteFolder)
+				if(photo_id != '')
+					getPhotos(photo_id);
+				else
+					photos_lock = 0;
+				if(audio_id != '')
+					getAudios(audio_id);
+				else
+					audio_lock = 0;
+
+				getJSONSIds(fileId);
+
+				if(json_id != '') {
+					getVisitJSON(json_id);
+					// TODO: se o session storage tiver vazio, ir buscar ficheiro e carregar visitas do pob
+					users = [];
+					users = JSON.parse(sessionStorage.getItem("users"));
+					visit = [];
+					visit = JSON.parse(sessionStorage.getItem("visit"));
+					plotVisits = [];
+					plotVisits = JSON.parse(sessionStorage.getItem("plotVisits"));
+					var visitIndex = plotVisits.findIndex(value => value.fileId === visit.fileId);
+					var lastVisit = (visitIndex === 0 ? "Sem visita anterior" : refactorDate(plotVisits[visitIndex-1].date));
+					var nextVisit = (visitIndex === plotVisits.length-1 ? "Sem visita seguinte" : refactorDate(plotVisits[visitIndex+1].date));
+					document.getElementById('visit_title').innerText = visit.plotName + ` (${visit.plot}) - ` + refactorDate(visit.date);
+					document.getElementById('last_visit').innerHTML = lastVisit;
+					document.getElementById('last_visit_area').fileId = (lastVisit === "Sem visita anterior" ? null : plotVisits[visitIndex-1].fileId);
+					document.getElementById('last_visit_area').style.color = (lastVisit === "Sem visita anterior" ? 'darkgrey' : 'black');
+					document.getElementById('last_visit_area').style.cursor = (lastVisit === "Sem visita anterior" ? 'default' : 'pointer');
+					document.getElementById('last_visit_area').onclick = function(){
+						if(this.fileId != null){
+							sessionStorage.setItem("visit", JSON.stringify(plotVisits.find(value => value.fileId === this.fileId)));
+							window.location.href = 'visit.html?visit_id=' + this.fileId;
+						}
+					};
+					document.getElementById('next_visit').innerHTML = nextVisit;
+					document.getElementById('next_visit_area').style.color = (nextVisit === "Sem visita seguinte" ? 'darkgrey' : 'black');
+					document.getElementById('next_visit_area').style.cursor = (nextVisit === "Sem visita seguinte" ? 'default' : 'pointer');
+					document.getElementById('next_visit_area').fileId = (nextVisit === "Sem visita seguinte" ? null : plotVisits[visitIndex+1].fileId);
+					document.getElementById('next_visit_area').onclick = function(){
+						if(this.fileId != null){
+							sessionStorage.setItem("visit", JSON.stringify(plotVisits.find(value => value.fileId === this.fileId)));
+							window.location.href = 'visit.html?visit_id=' + this.fileId;
+						}
+					};
+					document.getElementById('number_photos').innerHTML = visit.numPhotos;
+					document.getElementById('number_voice_records').innerHTML = visit.numVoice;
+					document.getElementById('begin').innerHTML = refactorDate(visit.date) + " às " + visit.tBegin;
+					//document.getElementById('duration').innerHTML = secondsToTime(visit.duration);
+
+					if(visit.notes.localeCompare("null") !== 0) {
+						document.getElementById('no_notes').innerHTML = visit.notes;
+						document.getElementById('note_comments_icon').style.display = 'block';
+					}else{
+						////console.log("Sem notas");
+
+					}
+
+					var technicians = visit.technicians;
+					technicians = technicians.replace(';', ' & ');
+					if(technicians.localeCompare('null') === 0 )
+						document.getElementById('technician').innerHTML = folderOwner; 
+					else
+						document.getElementById('technician').innerHTML = technicians;
+					if(visit.ef !== "null")
+						document.getElementById('ef').innerHTML = visit.ef;
+					else
+						document.getElementById('ef').innerHTML = "Não indicado";
+					
+					if(visit.nea !== "null"){
+						document.getElementById('nea_text').style.display = 'inline';
+						document.getElementById('nea').innerText = visit.nea.includes("%") ? visit.nea : visit.nea +"%";
+					}
+
+					if(visit.rain === "true")
+						document.getElementById("rain").innerHTML = "Sim";
+
+					if(visit.treatment === "true")
+						document.getElementById("treatment").innerHTML = "Sim";
+
+					if(visit.caliber !== "null")
+						document.getElementById("caliber").innerHTML = visit.caliber;
+
+
+					var date = visit.date.split("/");
+					var filterDate = date[0] + "-" + date[1] + "-" + date[2];
+
+					var overall = visit.overall === 'null' ? null : visit.overall.replace("//", "/").split("/");
+					var enemies = '';
+					if(overall !== null && overall !== undefined){
+						//console.log(overall);
+						enemies = '&! Sigla Inimigo=';
+						for(var j=0; j < overall.length; j++){
+							var sigla = overall[j].replace(/[0-9]/g, '').trim();
+							if(!enemies.includes(sigla)) {
+								enemies += sigla;
+								if (j !== overall.length - 1)
+									enemies += ",";
+							}
+						}
+						//console.log(enemies);
+					}
+
+                    /*var viz = document.getElementById('viz').getElementsByTagName('iframe').item(0);
+					viz.src += `&codigoparcela=${visit.plot}&datavisita=${filterDate}`;
+					console.log(viz.src);*/
+
+					openTab('viz_tab','viz');
+					//getJSONsContents();
+                    document.getElementById("info").style.visibility = "visible";
+
+					getComments(visit.fileId,false,true);
+
+				}
+				if(gpx_id.length > 0)
+					getGPX(gpx_id);
+				else
+					orderFiles();
+
+			} else {
+				appendPre('No files found.');
+			}
+		});
+	}
+
+	function secondsToTime(seconds) {
+		if(seconds < 60)
+			return seconds + " segundos";
+		else {
+			var minutes = Math.round(seconds / 60);
+			if(minutes < 60)
+				return minutes + " minutos";
+			else{
+				var hours = Math.trunc(minutes / 60);
+				if(Math.round(minutes - hours*60) > 0)
+					return hours + " horas e " + Math.round(minutes - hours*60) + " minutos";
+				else
+					return hours + " horas";
+			}
+
+		}
+	}
+
+
+	function refactorDate(date) {
+		var values = date.split('/');
+		var month = "";
+		switch (values[1]) { //get month
+			case '01':
+				month = " Jan ";
+				break;
+			case '02':
+				month = " Fev ";
+				break;
+			case '03':
+				month = " Mar ";
+				break;
+			case '04':
+				month = " Abr ";
+				break;
+			case '05':
+				month = " Mai ";
+				break;
+			case '06':
+				month = " Jun ";
+				break;
+			case '07':
+				month = " Jul ";
+				break;
+			case '08':
+				month = " Ago ";
+				break;
+			case '09':
+				month = " Set ";
+				break;
+			case '10':
+				month = " Out ";
+				break;
+			case '11':
+				month = " Nov ";
+				break;
+			case '12':
+				month = " Dez ";
+				break;
+		}
+		return values[2] + month /*+ values[0].substr(2)*/;
+	}
+
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+		onload="this.onload=function(){};handleClientLoad()"
+		onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+
+</body>
+
+
+</html>

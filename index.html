@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página principal</title>
+    <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/16512b04b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <body>
+    <div class="header">
+      <img src="resources/images/fitoagro_logo.png" style="height: 40px; padding-bottom: 4px; align-self: center; margin-right: 64px">
+      <div id="visits_tab" onclick="window.location.reload()" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; text-decoration: underline; color: white">Visitas</div>
+      <!--<div id="analytic_tab" onclick="window.location.href = 'analytic_viz.html'" style="cursor:pointer; margin-right: 20px; padding:6px; font-size: 16px; color: white">Analítica das Observações</div>
+      --><div id="stats_tab" onclick="window.location.href = 'stats.html'" style="cursor:pointer; padding:6px; font-size: 16px; color: white">Estatísticas</div>
+      <div style="margin-left: auto; align-self: center">
+          <!--Add buttons to initiate auth sequence and sign out-->
+          <div id="user_name" style="font-size: 16px; padding-top: 6px; color: #cccccc"> </div>
+          <button type="button" class="btn light-button" style="background-color: lightgray; color: black; float: right" id="signout_button">Logout</button>
+      </div>
+    </div>
+
+    <div id="login" style="display: none; flex-direction: column; justify-content: center; align-items: center">
+      <div style="display:flex; flex-direction:column; justify-content: center; align-items: center; padding: 48px; margin-top: 10%; background-color: lightgray; border-radius: 3px; box-shadow: 5px 5px 5px darkgrey">
+          <i class="fa fa-lock" style="font-size: 70px; color: #008577;"></i>
+        <br><br>
+        <h4>Por favor faça login:</h4>
+        <br>
+          <button type="button" class="btn white-button" style=" width: 100%; display: none;" id="authorize_button">Entrar</button>
+      </div>
+    </div>
+
+    <div id="content" class="content" >
+      <div style="position: fixed; top:40px; left: 6%; right:6%; z-index: 9000; background-color: whitesmoke;
+          display: flex; flex-direction: row; align-items: flex-start; border-bottom: 1px solid #00574B;
+          padding-bottom: 1rem; padding-top:20px; margin-bottom:24px">
+        <pre id="visits" style="padding-left: 24px; margin: 0; white-space: pre-wrap;"></pre>
+        <div style="margin-left: auto;">
+          <i style="color: #008577; font-size: 16px; padding-right: 6px;" class="fas fa-calendar"></i>
+          <span class="btn dropdown-toggle btn-light" style="cursor: pointer; text-align: left">
+            <input id="filterdates" readonly="readonly" type="text" name="daterange" value="" placeholder="Todas as Datas"
+                   style="z-index:9998; cursor: pointer; border: none; background-color: transparent"/>
+          </span>
+        </div>
+        <div style="margin-left: 24px;">
+            <i style="color: #008577; font-size: 16px; padding-right: 6px;" class="fas fa-filter"></i>
+            <select id="filterplots" class="selectpicker" data-live-search-placeholder="Pesquisar..." title="Todas as parcelas" onchange="filterPlots()" multiple
+                    data-live-search="true" data-live-search-normalize="true" data-actions-box="true" data-none-results-text="Sem resultados"
+                    data-deselect-all-text="Limpar" data-select-all-text="Todas">
+            </select>
+        </div>
+        <div class="dropdown" style="margin-right: 48px; margin-left: 24px; height: 40px">
+          <i style="color: #008577; font-size: 16px; padding-right: 6px;" class="fas fa-list"></i>
+          <button type="button" class="btn light-button" style="width:200px; text-align: left !important;
+           background-color: #f8f9fa; font-weight: normal; color: black" id="sorting">Não Agrupado
+            <i style="position: absolute; right: 8px; top: 12px" class="fas fa-caret-down"></i></button>
+          <ul class="dropdown-menu" role="menu" style="width:200px; margin-left:28px">
+            <li id="groupby-none" onclick="updateList(this.id)" style="cursor: pointer; padding: 8px 8px 8px 24px">
+              <a>Não Agrupado <i id="groupby-none-icon"style=" position: absolute; right: 8px; top: 12px; color: #008577" class="fas fa-check-circle"></i></a>
+            </li>
+            <!--<li class="divider"><hr style="height: 1px; margin: 0; padding: 0"></li>
+            <li id="groupby-technician" onclick="updateList(this.id)" style="padding: 8px 8px 8px 24px">
+              <a>Técnico <i id="groupby-technician-icon"style="visibility: hidden; margin-left: 10px; color: #008577" class="fas fa-check-circle"></i></a>
+            </li>!-->
+            <li class="divider"><hr style="height: 1px; margin: 0; padding: 0"></li>
+            <li id="groupby-plot" onclick="updateList(this.id)" style="cursor: pointer; padding: 8px 8px 8px 24px">
+              <a>Por Parcela <i id="groupby-plot-icon" style="visibility: hidden; position: absolute; right: 8px; top: 54px; color: #008577" class="fas fa-check-circle"></i></a>
+            </li>
+          </ul>
+          <!--<ul class="dropdown-menu multi-level dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+            <li class="dropdown-submenu">
+              <a tabindex="-1">Agrupar por</a>
+
+            </li>
+            <li class="divider"><hr style="height: 1px; margin: -1px; padding: 0"></li>
+            <li class="dropdown-submenu" style="">
+              <a tabindex="-1">Ordenar por</a>
+              <ul class="dropdown-menu" role="menu" style="margin-left:1px; margin-top: -1px">
+                <li id="orderby-date" onclick="updateList(this.id)" style="padding: 8px 8px 8px 24px">
+                  <a tabindex="-1">Data <i id="orderby-date-icon" style="margin-left: 50px; color: #008577" class="fas fa-sort-amount-down"></i></a>
+                </li>
+                <li class="divider"><hr style="height: 1px; margin: 0; padding: 0"></li>
+                <li id="orderby-name" onclick="updateList(this.id)" style="padding: 8px 8px 8px 24px">
+                  <a>Nome <i id="orderby-name-icon" style=" visibility: hidden; margin-left: 50px; color: #008577" class="fas fa-sort-amount-up"></i></a>
+                </li>
+              </ul>
+            </li>
+          </ul>!-->
+        </div>
+      </div>
+      <div id="renderList" style="position: absolute; top: 80px; left: 6%; right: 6%; margin-top: 70px; margin-left:6px; display: flex; flex-direction: column"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script type="text/javascript">
+
+      var fontFamily = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,' +
+              '"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"';
+
+      var currentOrder = "orderby-date";
+      var orderDirection = 0; //1 = descending ; 0 = asccending
+      var currentGrouping = "groupby-none";
+
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '697021054229-c7jjbfpfmjkrnoqjo2pg7nfj7v1a1f95.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyCMSb0abab-1ALwctezS4mWo8AalLXI9KI';
+      /** LOCALHOST ONLY **/
+
+      // Array of API discovery doc URLs for APIs used by the quickstart
+      var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      var SCOPES = 'https://www.googleapis.com/auth/drive';
+
+      var loginForm = document.getElementById('login');
+      var authorizeButton = document.getElementById('authorize_button');
+      var userName = document.getElementById('user_name');
+      var signoutButton = document.getElementById('signout_button');
+      var content = document.getElementById('content');
+
+      var users = [];
+      var visits = [];
+      var plots = [];
+      var plotsFilter = [];
+
+      var lastDevice;
+      var fullName;
+
+      var region_info = {};
+      var enemy_acronym = {};
+
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      function handleClientLoad() {
+        sessionStorage.clear();
+        gapi.load('client:auth2', initClient);
+      }
+
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initClient() {
+        gapi.client.init({
+          apiKey: API_KEY,
+          clientId: CLIENT_ID,
+          discoveryDocs: DISCOVERY_DOCS,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
+        }, function(error) {
+          appendPre(JSON.stringify(error, null, 2),false);
+        });
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+
+          var currentUser = gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
+          fullName = currentUser.getName();
+
+          document.getElementById("visits_tab").style.visibility = "visible";
+          document.getElementById("stats_tab").style.visibility = "visible";
+
+          authorizeButton.style.display = 'none';
+          loginForm.style.display = 'none';
+          signoutButton.style.visibility = 'visible';
+          userName.innerHTML = fullName;
+          userName.style.display = 'inline-block';
+
+          content.style.display = 'flex';
+
+
+          gapi.client.drive.files.get({
+            'fileId': '1u3bhE_SCCGCSUc3aFACFoD2QuDkMnM81',
+            'alt': 'media',
+          }).then(function (response) {
+            region_info = {};
+            enemy_acronym = {};
+
+            for(var i = 0; i < response.result.length; i++){
+              var actual_region = response.result[i];
+              region_info[actual_region['codigo']] = actual_region['inimigo'];
+            }
+
+
+            gapi.client.drive.files.get({
+              'fileId': '1iKLtUE3msrXY0t6VxV54LjbjKs5C_eR2',
+              'alt': 'media',
+            }).then(function (response) {
+              var lines = response.body.split('\n');
+              for(var i = 0 ; i < lines.length; i++){
+                var aux = lines[i].split(',');
+                enemy_acronym[aux[1].replace(/(\r\n|\n|\r)/gm, "")] = aux[0];
+              }
+
+              //console.log(region_info, enemy_acronym);
+              listUsers();
+
+            },function(error){
+              console.error(error)
+              listUsers();
+            });
+
+
+
+          },function(error){
+            console.error(error)
+            listUsers();
+          });
+
+
+
+        } else {
+          document.getElementById("visits_tab").style.visibility = "hidden";
+          document.getElementById("stats_tab").style.visibility = "hidden";
+          authorizeButton.style.display = 'inline-block';
+          loginForm.style.display = 'flex';
+          userName.innerText ="";
+          userName.style.display = 'none';
+          signoutButton.style.visibility = 'hidden';
+          content.style.display = 'none';
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+		document.getElementById("renderList").innerHTML = "";
+		document.getElementById('visits').innerHTML = "";
+        //document.getElementById('visits').removeChild('h3');
+		visits = [];
+		plots = [];
+      }
+
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node. Used to display the results of the API call.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message,header) {
+        var pre = document.getElementById('visits');
+        var textContent = document.createElement('h3');
+        if(header)
+          textContent.setAttribute('id','header');
+        textContent.innerText = message;
+        textContent.style.fontFamily = fontFamily;
+        pre.appendChild(textContent);
+      }
+
+      function listUsers() {
+        var fileID = '1RgkniTJ-VtkilglCzo8dAqALLIgFffWg';
+        gapi.client.drive.files.list({
+          'folderId' : fileID,
+          'pageSize': 100,
+          'fields': "nextPageToken, files(id, name, owners)",
+          'q': `'${fileID}' in parents`
+        }).then(function(response) {
+          var files = response.result.files;
+          //Everything is loaded
+
+          files.forEach(setUsers);
+        });
+      }
+
+      function listVisits(fileID, user) {
+        if(visits.length === 0 && document.getElementById("visits").innerText.localeCompare("") === 0)
+          appendPre('Visitas de Campo',true);
+        gapi.client.drive.files.list({
+          'folderId' : fileID,
+          'pageSize': 100,
+          'fields': "nextPageToken, files(id, name, owners)",
+          'q': `'${fileID}' in parents`
+        }).then(function(response) {
+          var files = response.result.files;
+          //Everything is loaded
+
+          for(var i = 0; i < files.length; i++){
+            if(files[i].name === "info.csv"){
+              gapi.client.drive.files.get({
+                'fileId': files[i].id,
+                'alt': 'media',
+              }).then(function(response) {
+                var file = response.body;
+                var lines = file.split(/\r\n|\n/);
+                var headers = lines[0].split('|');
+                var userVisits = [];
+                for(var i = 1; i < lines.length; i++){
+                  var currentLine = lines[i].split('|');
+                  var info = [];
+                  info.push({user: user});
+                  for(var j=0; j < headers.length; j++) {
+                    info.push({[headers[j]]:currentLine[j]});
+                  }
+                  info = info.reduce(((r, c) => Object.assign(r, c)), {});
+
+                  if(info.plotName !== undefined && plots.filter(plot => plot.name === info.plotName).length === 0)
+                    plots.push({name: info.plotName, code: info.plot});
+
+                  userVisits.push(info);
+                  visits.push(info);
+                }
+                //console.log(visits);
+
+                var div = document.getElementById('renderList');
+                var visitsDiv = document.createElement('div');
+                visitsDiv.style.display = "flex";
+                visitsDiv.style.flexDirection = "row";
+                visitsDiv.style.flexWrap = "wrap";
+                visitsDiv.style.justifyContent = "flex-start";
+                visitsDiv.style.alignItems = "flex-start";
+                visitsDiv.style.width = "100%";
+                div.appendChild(visitsDiv);
+                //console.log('no list')
+               // render(visitsDiv, userVisits);
+                setFilter();
+                updateList(currentGrouping);
+              });
+            }
+          }
+
+        });
+      }
+
+      function setUsers(element, index, arr) {
+        if(element != null){
+          /** Hide Testing Devices */
+          if (element.name !== "mas.correia@campus.fct.unl.pt" && element.name !== "miguel_correia754@hotmail.com") {
+              users.push({id: element.id, name: element.name, username : element.owners[0].displayName});
+              //console.log(users);
+              listVisits(element.id, element.id);
+          }
+        }
+      }
+
+      function updateList(id) {
+
+        var div = document.getElementById('renderList');
+        div.innerHTML = "";
+
+        if (visits.length === 0){
+          var noVisits = document.createElement('div');
+          noVisits.innerHTML = "Sem Visitas";
+          div.appendChild(noVisits);
+          return;
+        }
+
+        if(id.includes("groupby")){
+          document.getElementById(currentGrouping + "-icon").style.visibility = "hidden";
+          document.getElementById(id + "-icon").style.visibility = "visible";
+          var selected = id.includes("none") ? "Não Agrupado" : "Agrupado por parcela";
+          document.getElementById("sorting").innerHTML = selected + '<i style=\"position: absolute; right: 8px; top: 12px\" class=\"fas fa-caret-down\"></i>';
+          currentGrouping = id;
+        }
+
+        var filtered = visits;
+
+        function updateSort() {
+          switch (id) {
+            case "orderby-date":
+              if ((currentOrder === id && orderDirection === 0) || currentOrder !== id) {
+                orderDirection = 1;
+                document.getElementById(id + "-icon").setAttribute("class", "fas fa-sort-amount-down");
+              } else{
+                orderDirection = 0;
+                document.getElementById(id + "-icon").setAttribute("class", "fas fa-sort-amount-up");
+              }
+              break;
+            /*case "orderby-name":
+              if ((currentOrder === id && orderDirection === 1) || currentOrder !== id) {
+                orderDirection = 0;
+                document.getElementById(id + "-icon").setAttribute("class", "fas fa-sort-amount-up");
+              } else {
+                orderDirection = 1;
+                document.getElementById(id + "-icon").setAttribute("class", "fas fa-sort-amount-down");
+              }
+              break;*/
+          }
+          document.getElementById(currentOrder + "-icon").style.visibility = "hidden";
+          document.getElementById(id + "-icon").style.visibility = "visible";
+          currentOrder = id;
+        }
+
+        switch (currentGrouping) {
+          /*case "groupby-technician":
+            var total = 0;
+            for(var i=0; i< users.length; i++){
+              filtered = visits.filter(value => value.user === users[i].id);
+              filtered = sort(id, filtered);
+              if(filtered.length > 0) {
+                var techName = document.createElement('h5');
+                techName.innerText = users[i].name + '\n';
+                techName.style.fontFamily = fontFamily;
+                div.appendChild(techName);
+                var techDiv = document.createElement('div');
+                techDiv.style.display = "flex";
+                techDiv.style.flexDirection = "row";
+                techDiv.style.flexWrap = "wrap";
+                techDiv.style.marginTop = "6px";
+                techDiv.style.justifyContent = "flex-start";
+                techDiv.style.alignItems = "flex-start";
+                techDiv.style.width = "100%";
+                div.appendChild(techDiv);
+                //console.log('no group1');
+                render(techDiv, filtered);
+                total += filtered.length;
+              }
+            }
+            document.getElementById('header').innerText  = 'Visitas de Campo (' + total + ')'
+
+            if(!id.includes("groupby"))
+              updateSort();
+            break;*/
+          case "groupby-plot":
+            var list = visits.filter(value => plotsFilter.includes(value.plotName));
+            var total = 0;
+            for(var i=0; i< plots.length; i++){
+              plots = plots.sort(function (a, b) {
+                return ((a.name < b.name) ? -1 : ((a.name > b.name) ? 1 : 0));
+              });
+              filtered = list.filter(value => value.plotName === plots[i].name);
+              if(filtered.length === 0)
+                continue;
+              filtered = sort(id, filtered);
+              var plotTitle = document.createElement('h5');
+              plotTitle.innerText = `${plots[i].name} (${plots[i].code})\n`;
+              plotTitle.style.fontFamily = fontFamily;
+              plotTitle.style.textAlign = "center";
+              plotTitle.style.padding = "6px";
+              plotTitle.style.backgroundColor = "#f8f9fa";
+              div.appendChild(plotTitle);
+              var plotDiv = document.createElement('div');
+              plotDiv.style.display = "flex";
+              plotDiv.style.flexDirection = "row";
+              plotDiv.style.flexWrap = "wrap";
+              plotDiv.style.marginTop = "6px";
+              plotDiv.style.justifyContent = "flex-start";
+              plotDiv.style.alignItems = "flex-start";
+              plotDiv.style.width = "100%";
+              div.append(plotDiv);
+              //console.log('no group2');
+
+              render(plotDiv, filtered);
+              total += filtered.length;
+            }
+            document.getElementById('header').innerText  = `Visitas de Campo (${total})`;
+            break;
+
+          case "groupby-none":
+          default:
+            var divElement = document.createElement('div');
+            divElement.style.display = "flex";
+            divElement.style.flexDirection = "row";
+            divElement.style.flexWrap = "wrap";
+            divElement.style.marginTop = "6px";
+            divElement.style.justifyContent = "flex-start";
+            divElement.style.alignItems = "flex-start";
+            divElement.style.width = "100%";
+            div.append(divElement);
+            filtered = visits.filter(value => plotsFilter.includes(value.plotName));
+            filtered = sort(id, filtered);
+            //console.log('no group3');
+
+            render(divElement, filtered);
+            break;
+        }
+        if(!id.includes("groupby"))
+          updateSort();
+      }
+
+      function setFilter() {
+        plotsFilter = [];
+        plots = plots.sort(function (a, b) {
+          return ((a.name < b.name) ? -1 : ((a.name > b.name) ? 1 : 0));
+        });
+        var select = document.getElementById("filterplots");
+        select.options.length = plots.length;
+        for(var i=0; i< plots.length; i++){
+          var option = new Option(`${plots[i].name} (${plots[i].code})`, plots[i].name, true, true);
+          option.title = plots[i].code;
+          option.placeholder = plots[i].code;
+          select.options[i] = option;
+          plotsFilter.push(plots[i].name);
+        }
+        $('.selectpicker').selectpicker({title: 'Todas as parcelas', selectedTextFormat: 'static'});
+        $('.selectpicker').selectpicker('refresh');
+        updateList(currentGrouping);
+      }
+      
+      function filterPlots() {
+        plotsFilter = [];
+        var select = document.getElementById("filterplots");
+        for(var i=0; i< select.options.length; i++){
+          if(select.options[i].selected)
+            plotsFilter.push(select.options[i].value);
+        }
+        var format = 'values';
+        var title = 'Todas as parcelas';
+        if(plotsFilter.length === select.options.length) //all selected
+          format = 'static';
+        else if(plotsFilter.length === 0){ //none selected
+          format = 'static';
+          title = 'Nenhuma parcela';
+        }
+
+        $('.selectpicker').selectpicker({title: title, selectedTextFormat: format});
+        $('.selectpicker').selectpicker('refresh');
+
+        updateList(currentGrouping);
+      }
+
+      function sort(id, visits) {
+        var type;
+        if(id.includes("groupby"))
+          type = currentOrder.split("-")[1];
+        else
+          type = id.split("-")[1];
+
+        switch (type) {
+              case "date":
+                if(id.includes("groupby")){
+                  visits = orderDirection === 1 ? sortByDateDesc(visits) : sortByDateAsc(visits);
+                } else if((currentOrder === id && orderDirection === 0) || currentOrder !== id) {
+                  visits = sortByDateAsc(visits);
+                } else{
+                  visits = sortByDateDesc(visits);
+                }
+                function sortByDateAsc(visits) {
+                visits.sort(function (a, b) { //sort by name asc
+                    return ((a.date < b.date) ? 1 : ((a.date > b.date) ? -1 : 0));
+                });
+                return visits;
+              }
+                function sortByDateDesc(visits) {
+                visits.sort(function (a, b) { //sort by name desc
+                    return ((a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0));
+                });
+                return visits;
+              }
+                break;
+              case "name":
+                if(id.includes("groupby")) {
+                  visits = orderDirection === 0 ? sortByNameAsc(visits) : sortByNameDesc(visits);
+                } else if((currentOrder === id && orderDirection === 1) || currentOrder !== id) {
+                  visits = sortByNameAsc(visits);
+                }else{
+                  visits = sortByNameDesc(visits);
+                }
+                function sortByNameAsc(visits) {
+                  visits.sort(function (a, b) { //sort by name asc
+                      return ((a.plot < b.plot) ? -1 : ((a.plot > b.plot) ? 1 : 0));
+                  });
+                  return visits;
+                }
+                function sortByNameDesc(visits) {
+                  visits.sort(function (a, b) { //sort by name desc
+                      return ((a.plot < b.plot) ? 1 : ((a.plot > b.plot) ? -1 : 0));
+                  });
+                  return visits;
+                }
+                break;
+        }
+        return visits;
+      }
+
+      function render(div, list) {
+        var start = $('#filterdates').data('daterangepicker').startDate.format('YYYY/MM/DD');
+        var end = $('#filterdates').data('daterangepicker').endDate.format('YYYY/MM/DD');
+        var success_counter = 0;
+        for(var i=0; i<list.length; i++) {
+
+            let conflict = false;//list[i].technicians.split(";").includes(fullName); //TODO
+            let hasPermissions = list[i].technicians.split(";").includes(fullName); // TODO comparar emails
+
+
+          if(list[i].plot !== undefined) {
+            // check date filter
+            if (document.getElementById('filterdates').value !== '') {
+              // filter contains interval
+              if (list[i].date < start || list[i].date > end) {
+                // visit not within filter interval
+                continue;
+              }
+            }
+            success_counter++;
+            var box = document.createElement('div');
+            box.setAttribute('class', 'box');
+            var label = document.createElement('div');
+            label.setAttribute('class', 'box-label');
+            if (conflict)
+              label.style.backgroundColor = '#881600';
+            var summary = document.createElement('div');
+            summary.setAttribute('class', 'box-content');
+            box.setAttribute('id', list[i].fileId);
+
+
+            box.onclick = function () {
+              if (!conflict) {
+                var visit = visits.find(value => value.fileId === this.id);
+                sessionStorage.setItem('visit', JSON.stringify(visit));
+                sessionStorage.setItem('users', JSON.stringify(users));
+                var plotVisits = visits.filter(value => value.plot === visit.plot).sort(function (v1, v2) {
+                  return ((v1.date < v2.date) ? -1 : ((v1.date > v2.date) ? 1 : 0));
+                });
+                sessionStorage.setItem('plotVisits', JSON.stringify(plotVisits));
+                window.location.href = `visit.html?visit_id=${this.id}`;
+              } else {
+                if (hasPermissions) {
+                  if (confirm("A visita selecionada apresenta um conflito que necessita de ser resolvido para poder consultar a informação. Pretende continuar?")) {
+                    window.location.href = `conflict.html?visit_id=${this.id}`;
+                  }
+                } else {
+                  alert("A visita selecionada apresenta um conflito que necessita de ser resolvido para poder consultar a informação. Aguarde que um dos técnicos resolva o conflito.")
+                }
+              }
+            };
+
+            //var title = document.createElement('span');
+            var day = document.createElement('a');
+            day.style.fontSize = '24px'
+            day.style.color = "white";
+            day.style.marginBottom = '6px';
+            if (list[i].date !== undefined)
+              day.innerText = list[i].date.split('/')[2];
+            label.appendChild(day);
+
+            var mm_yyyy = document.createElement('a');
+            mm_yyyy.style.fontSize = '18px'
+            mm_yyyy.style.color = "white";
+            mm_yyyy.innerText = refactorDate(list[i].date).replace(day.innerText + " ", "")
+            label.appendChild(mm_yyyy);
+
+            var line = document.createElement('a');
+            line.style.borderBottom = '1px solid white';
+            line.style.width = '80%';
+            line.style.height = '3px';
+            line.style.marginTop = '16px';
+            line.style.marginBottom = '16px';
+            label.appendChild(line);
+
+            var plotCode = document.createElement('a');
+            plotCode.style.fontSize = '20px'
+            plotCode.style.color = "white";
+            plotCode.style.marginBottom = '16px';
+            plotCode.innerText = list[i].plot;
+            label.appendChild(plotCode);
+
+            var multimedia = document.createElement('a');
+            var photos = '<i class="fas fa-camera" style="font-size: 20px; color: darkgrey"/>' +
+                    '<a style="font-size: 14px; font-family: sans-serif; font-weight: normal">' + " " + list[i].numPhotos + '</a>';
+            var audio = '<i class="fas fa-microphone" style="padding-left: 12px; font-size: 20px; color: darkgrey"/>' +
+                    '<a style="font-size: 14px; font-family: sans-serif; font-weight: normal;">' + " " + list[i].numVoice + '</a>';
+
+            multimedia.innerHTML = photos + audio;
+            multimedia.style.color = "darkgrey";
+            label.appendChild(multimedia);
+
+            /*---------------*/
+
+            var topBar = document.createElement('span');
+            topBar.style.display = 'inline-block';
+            topBar.style.paddingBottom = '3px';
+            topBar.style.marginBottom = '6px';
+            topBar.style.borderBottom = '1px solid darkgrey';
+            topBar.style.width = '100%';
+            topBar.style.alignContent = 'center';
+            topBar.style.justifyItems = 'center';
+            topBar.style.paddingLeft = '6px';
+
+            var ef = document.createElement('a');
+            var ef_result = list[i].ef;
+            if (list[i].ef === "null")
+              ef_result = "--";
+
+            ef.innerHTML = "<b>EF: </b>" + ef_result;
+            topBar.appendChild(ef);
+
+            if (list[i].nea !== "null") {
+              var nea = document.createElement('a');
+              nea.style.marginLeft = '16px';
+
+              var result_nea = list[i].nea.split(".0")[0];
+
+              nea.innerHTML = "<b>NEA: </b>" + result_nea + (result_nea.includes("%") ? "" : "%");
+              topBar.appendChild(nea);
+            }
+
+            var eventIcon = document.createElement('div');
+
+            if(!conflict) {
+              eventIcon.setAttribute("class", "tool");
+              eventIcon.style.float = "right";
+              eventIcon.innerHTML = list[i].rain === "true" ? '<img src="resources/images/rain_icon.png" style="width:25px;height:25px; padding-bottom: 3px">'
+                      : list[i].treatment === "true" ? '<img src="resources/images/treatment_icon.png" style="width:25px;height:25px; padding-bottom: 3px">' : '';
+            }
+              if (eventIcon.innerHTML !== "") {
+                var tooltip = document.createElement('span');
+                tooltip.setAttribute('class', 'tooltiptext');
+                tooltip.innerText = list[i].rain === "true" ? "Chuva" : list[i].treatment === "true" ? "Tratamento" : "";
+                eventIcon.appendChild(tooltip);
+              }
+
+              topBar.appendChild(eventIcon);
+              summary.appendChild(topBar);
+
+
+            /*--------------------------*/
+
+            var icons = document.createElement('span');
+            icons.style.width = "100%";
+            icons.style.height = "25px";
+
+            var gpsIcon = document.createElement('div');
+            gpsIcon.setAttribute("class", "tool");
+            gpsIcon.style.marginLeft = "2px";
+            gpsIcon.style.float = "right";
+            gpsIcon.innerHTML = list[i].gps === "false" ? '<img src="resources/images/no_gps_icon.png" style="width:25px;height:25px">' : '';
+
+            if (gpsIcon.innerHTML !== "") {
+              var tooltip = document.createElement('span');
+              tooltip.setAttribute('class', 'tooltiptext');
+              tooltip.innerText = list[i].gps === "false" ? "Sem Trajetória GPS" : "";
+              gpsIcon.appendChild(tooltip);
+            }
+
+            icons.appendChild(gpsIcon);
+            summary.appendChild(icons);
+
+            /*--------------------------*/
+
+            var content = document.createElement('span');
+            content.setAttribute("class", "tool");
+            content.style.lineHeight = "1";
+            content.style.width = "100%";
+            content.style.height = "100px";
+            content.style.textAlign = "center";
+            content.style.justifySelf = "center";
+            content.style.alignSelf = "center";
+            content.style.padding = "8px";
+            content.style.paddingTop = "18px";
+
+            var tooltipObs = document.createElement('span');
+            tooltipObs.setAttribute('class', 'tooltip-large');
+
+            var tooltipNotes = document.createElement('span');
+            tooltipNotes.setAttribute('class', 'tooltiptext');
+
+            var overview = document.createElement('span');
+            overview.style.fontSize = "14px";
+
+            var overall = list[i].overall;
+
+            // if (typeof overall !== undefined && overall.length > 23)
+            //   overall = overall.split("|")[0] + "|" + overall.split("|")[1] + "|" + overall.split("|")[2] + "|" + overall.split("|")[3] + " | ...";
+            //
+            if (overall === "null")
+              overall = '';
+
+            if (typeof overall !== undefined && overall.includes(" // ")) {
+              var overallByType = overall.split(" // ");
+              overall = '';
+
+
+              if (overallByType[0].length > 0) {
+                content.style.paddingTop = "8px";
+                if (overallByType[1].length === 0)
+                  content.style.paddingTop = "20px";
+                if (!conflict)
+                  overall += "<p><b style='color: #008577'>EOIs:</b> ";
+                else
+                  overall += "<p><b style='color: #881600'>EOIs:</b> ";
+
+                if (overallByType[0].length > 14) {
+                  overall += overallByType[0].substr(0, 14) + "...</p>";
+                } else
+                  overall += overallByType[0] + "</p>";
+              }
+
+              if (overallByType[1].length > 0) {
+                content.style.paddingTop = "8px";
+                if (overallByType[0].length === 0)
+                  content.style.paddingTop = "20px";
+
+                if (!conflict)
+                  overall += "<p><b style='color: #008577'>Capturas:</b> ";
+                else
+                  overall += "<p><b style='color: #881600'>Capturas:</b> ";
+
+                if (overallByType[1].length > 14) {
+                  overall += overallByType[1].substr(0, 14) + "...</p>";
+                } else
+                  overall += overallByType[1] + "</p>";
+              }
+
+
+              if (overall.includes("...")) {
+                if (overallByType[0].length > 0)
+                  tooltipObs.innerHTML = "<p><b>EOIs:</b> " + overallByType[0] + "</p>";
+                tooltipObs.innerHTML += "<b>Capturas:</b> " + overallByType[1];
+              }
+
+              if (overall.length > 0) {
+                content.style.textAlign = "left";
+                content.style.alignSelf = "left";
+              }
+
+            } else {
+              var aux = typeof overall !== undefined ? overall.split(" / ") : undefined;
+
+              if (typeof aux !== "undefined" && aux.length > 2) {
+                var region_info_clone = JSON.parse(JSON.stringify(region_info));
+                //console.log(region_info_clone);
+
+
+                var main_enemies = region_info_clone[list[i].plot];
+                if (typeof main_enemies !== "undefined") {
+                  for (var w = 0; w < main_enemies.length; w++) {
+                    main_enemies[w] = enemy_acronym[main_enemies[w]];
+                  }
+                }
+
+                var main_enemies_string = '';
+                var not_main = '';
+                for (w = 0; w < aux.length; w++) {
+                  var actual_enemy = aux[w].replace(/[0-9]/g, '');
+                  //console.log(actual_enemy);
+                  if (typeof main_enemies !== "undefined" && main_enemies.some(e => e === actual_enemy)) {
+                    if (main_enemies_string.localeCompare('') !== 0)
+                      main_enemies_string += ' / ';
+                    main_enemies_string += aux[w];
+
+                  } else {
+                    if (not_main.localeCompare('') !== 0)
+                      not_main += ' / ';
+                    not_main += aux[w];
+                  }
+                }
+                if (main_enemies_string.localeCompare('') === 0)
+                  overall = not_main;
+                else if (not_main.localeCompare('') === 0)
+                  overall = main_enemies_string;
+                else
+                  overall = main_enemies_string + ' / ' + not_main;
+
+                if (overall.length > 20) {
+                  aux = overall.split(" / ");
+                  var temp = "";
+                  for (var k = 0; k < aux.length; k++) {
+                    temp += aux[k] + ' / ';
+                    if (temp.length >= 20)
+                      break;
+                  }
+                  tooltipObs.innerText = aux.join(" / ");
+                  overall = temp + "...";
+                }
+              }
+            }
+
+
+           if(!conflict) {
+               if (list[i].visited === "false") {
+                   overview.innerText = "Visita não efetuada";
+                   label.style.backgroundColor = "dimgrey";
+               } else if (overall.trim().length === 0) {
+                   overview.innerText = "Sem Observações"
+               } else
+                   overview.innerHTML = overall;
+
+               if (tooltipObs.innerText.length > 0)
+                   overview.appendChild(tooltipObs);
+           } else{
+              overview.innerHTML= '<span style="color: #881600;font-size: 25px; padding-bottom: 3px">Conflito</span>';
+              content.style.textAlign = 'center';
+              content.style.paddingTop = "20px";
+              content.style.paddingRight = "10px";
+
+          }
+
+            content.appendChild(overview);
+
+            if (tooltipObs.innerText.length > 0)
+              content.appendChild(tooltipObs);
+
+            summary.appendChild(content);
+
+            /*--------------------*/
+
+            var bottomBar = document.createElement('span');
+            bottomBar.style.display = "inline-block";
+            bottomBar.style.width = "100%";
+            bottomBar.style.bottom = "0px";
+
+            var notestr = list[i].notes.trim();
+
+            if (typeof list[i].notes === undefined || list[i].notes === "null") {
+              //console.log(notestr);
+              notestr = '';
+            }else if (notestr.length > 18) {
+              tooltipNotes.innerText = notestr;
+              notestr = notestr.substr(0, 18) + '...';
+            }
+
+            if(notestr !== "") {
+              var notes = document.createElement('div');
+              notes.setAttribute("class", "tool");
+              notes.style.position = "relative";
+              notes.style.display = "inline-block";
+              notes.style.backgroundColor = "whitesmoke";
+              notes.style.borderRadius = "2px";
+              notes.style.fontSize = "14px";
+              notes.style.padding = "4px";
+              notes.style.width = "155px";
+              notes.style.marginRight = "4px";
+              notes.innerHTML = notestr;
+
+              if (tooltipNotes.innerText.length > 0)
+                notes.appendChild(tooltipNotes);
+
+              bottomBar.appendChild(notes);
+
+            }
+
+            var userIcon = document.createElement('div');
+            userIcon.setAttribute("class", "tool");
+            userIcon.style.float = "right";
+            userIcon.style.marginTop = "2px";
+            userIcon.style.marginRight = "3px";
+
+            var user = users.find(value => value.id === list[i].user);
+            var userNames = user.username.split(" ");
+            var userPhoto = '<a id="user_icon" style="color: dimgrey; font-weight: bolder; font-family:sans-serif; font-size: 14px; width: 30px; height: 30px; line-height: unset;' +
+                    '-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; padding-top:5px;padding-bottom:5px; padding-left:3px; padding-right:3px; background-color: white">'
+                    + userNames[0].substr(0, 1).toUpperCase() + userNames[userNames.length - 1].substr(0, 1).toUpperCase() + '</a>';
+            userIcon.innerHTML = list[i].technicians.split(";").length === 1 ? userPhoto :
+                    '<img src="resources/images/coop_icon.png" style="width:25px;height:25px">';
+
+            var tooltipUser = document.createElement('span');
+            tooltipUser.setAttribute('class', 'tooltiptext');
+            tooltipUser.innerText = list[i].technicians.split(";").length === 1 ? list[i].technicians : "Cooperativo";
+            userIcon.appendChild(tooltipUser);
+
+            bottomBar.appendChild(userIcon);
+            summary.appendChild(bottomBar);
+
+            box.appendChild(label);
+            box.appendChild(summary);
+
+            //li.onclick = function(){onDeviceClick(this.getAttribute('id'))};
+
+            div.appendChild(box);
+
+            //li.innerHTML=li.innerHTML + element.name;
+          }
+        }
+
+        document.getElementById('header').innerText  = `Visitas de Campo (${success_counter})`;
+      }
+
+      function refactorDate(date) {
+        if(date !== undefined) {
+          var values = date.split('/');
+          var month = "";
+          switch (values[1]) { //get month
+            case '01':
+              month = " Jan ";
+              break;
+            case '02':
+              month = " Fev ";
+              break;
+            case '03':
+              month = " Mar ";
+              break;
+            case '04':
+              month = " Abr ";
+              break;
+            case '05':
+              month = " Mai ";
+              break;
+            case '06':
+              month = " Jun ";
+              break;
+            case '07':
+              month = " Jul ";
+              break;
+            case '08':
+              month = " Ago ";
+              break;
+            case '09':
+              month = " Set ";
+              break;
+            case '10':
+              month = " Out ";
+              break;
+            case '11':
+              month = " Nov ";
+              break;
+            case '12':
+              month = " Dez ";
+              break;
+          }
+          return values[2] + month + values[0];
+        }
+        return null;
+      }
+
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+    <script>
+      $(function() {
+
+        $('#filterdates').daterangepicker({
+          showDropdowns: true,
+          autoUpdateInput: false,
+          maxDate: moment(),
+          minDate: '01/01/2020',
+          opens: 'center',
+          alwaysShowCalendars: true,
+          showCustomRangeLabel: false,
+          locale: {
+            format: 'DD/MM/YYYY',
+            cancelLabel: 'Limpar',
+            applyLabel: 'Filtrar'
+          },
+        });
+
+        $('#filterdates').on('apply.daterangepicker', function (ev, picker) {
+          if(picker.startDate === picker.minDate && picker.endDate === picker.maxDate) {
+            $(this).val('');
+          }else
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' até ' + picker.endDate.format('DD/MM/YYYY'));
+          updateList(currentGrouping)
+        });
+
+        $('#filterdates').on('cancel.daterangepicker', function (ev, picker) {
+          //all dates apply
+          $(this).data('daterangepicker').setStartDate(moment().format("DD/MM/YYYY"));
+          $(this).data('daterangepicker').setEndDate(moment().format("DD/MM/YYYY"));
+          $(this).val('');
+          updateList(currentGrouping)
+        });
+      });
+
+    </script>
+  </body>
+</html>
+
+
+
+<!--<DOCTYPE! html>
+
+<html>
+
+<head>
+
+	<style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+	
+	<script src="js/javascript.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+	<script language="javascript">
+		initMap();
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+</body>
+
+
+</html>-->

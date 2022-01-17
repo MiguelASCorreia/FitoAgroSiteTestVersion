@@ -1,0 +1,6420 @@
+{
+   "_id":"39",
+   "crops":"Pera",
+   "eois":{
+      "0":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"1"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "1":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "2":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "3":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "4":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "5":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "6":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "7":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "8":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "9":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "10":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "11":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "12":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "13":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "14":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "15":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "16":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "17":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "18":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      },
+      "19":{
+         "Aranhiço Vermelho":{
+            "Formas móveis":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Folhas ocupadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Estenfiliose":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Pulgão Lanígero":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lagartas Mineiras":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Psila":{
+            "Adultos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Órgãos atacados":[
+               {
+                  "description":"Órgãos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"órgãos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N4 a N5)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Melada":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               },
+               {
+                  "description":"Frutos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Ovos":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ],
+            "Ninfas (N1 a N3)":[
+               {
+                  "description":"Ramos ocupados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cecidómia":{
+            "Rebentos atacados":[
+               {
+                  "description":"Rebentos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"rebentos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Sésia":{
+            "Sintomas nas galerias":[
+               {
+                  "description":"Sintomas nas galerias",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":0,
+                  "value":"false"
+               }
+            ]
+         },
+         "Pedrado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Bichado":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha de São José":{
+            "Ramos atacados":[
+               {
+                  "description":"Ramos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"ramos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Lepidópteros":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Cochonilha Algodão":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ],
+            "Estruturas novas atacadas":[
+               {
+                  "description":"Estruturas novas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ],
+            "Estruturas velhas atacadas":[
+               {
+                  "description":"Estruturas velhas atacadas",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"estruturas",
+                  "value":"0"
+               }
+            ]
+         },
+         "Mosca do Mediterrâneo":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Hoplocampa":{
+            "Frutos contíguos atacados":[
+               {
+                  "description":"Frutos contíguos atacados",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"frutos",
+                  "value":"0"
+               }
+            ]
+         },
+         "Oidio":{
+            "Folhas atacadas (1 ramo)":[
+               {
+                  "description":"Folhas atacadas (1 ramo)",
+                  "owners":[
+                     "Maria"
+                  ],
+                  "type":1,
+                  "units":"folhas",
+                  "value":"0"
+               }
+            ]
+         }
+      }
+   },
+   "info":{
+      "Finished_eois":"{\"0\":[\"Maria\"],\"1\":[\"Maria\"],\"2\":[\"Maria\"],\"3\":[\"Maria\"],\"4\":[\"Maria\"],\"5\":[\"Maria\"],\"6\":[\"Maria\"],\"7\":[\"Maria\"],\"8\":[\"Maria\"],\"9\":[\"Maria\"],\"10\":[\"Maria\"],\"11\":[\"Maria\"],\"12\":[\"Maria\"],\"13\":[\"Maria\"],\"14\":[\"Maria\"],\"15\":[\"Maria\"],\"16\":[\"Maria\"],\"17\":[\"Maria\"],\"18\":[\"Maria\"]}",
+      "Technicians":"[\"Maria\"]",
+      "Default_observations":{
+         "EF":{
+            "owners":[
+               "Maria"
+            ],
+            "type":6,
+            "value":"I/J"
+         },
+         "Chuva":{
+            "owners":[
+               "Maria"
+            ],
+            "type":0,
+            "value":"true"
+         },
+         "Tratamento":{
+            "owners":[
+               "Maria"
+            ],
+            "type":0,
+            "value":"false"
+         }
+      }
+   },
+   "number_photos":2,
+   "number_voice_records":0,
+   "plot_id":"4",
+   "time_begin":"20210412_100346",
+   "time_end":"20210412_102025",
+   "track_file":{
+      "Maria":"4_BRC_track_Maria_20210412_102025.gpx"
+   },
+   "traps":{
+      "Mosca Alimentar":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Mosca Decis trap":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Cecidómia Placa":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Cochonilha Algodão":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Hoplocampa":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"3"
+      },
+      "Cecidómia Caixa":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Sésia":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Bichado":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"2"
+      },
+      "Cryptoblabes gnidiella":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"0"
+      },
+      "Molesta":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"3"
+      },
+      "Funebrana":{
+         "owners":[
+            "Maria"
+         ],
+         "type":1,
+         "value":"3"
+      }
+   }
+}
